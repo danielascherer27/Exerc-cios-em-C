@@ -1,0 +1,275 @@
+EX01
+#include <stdio.h>
+int main() {
+    int num;
+    printf("Por favor, insira um numero:\n");
+    scanf("%i", &num);
+    printf("Aqui estao todos os numeros inteiros de 1 até o numero digitado:\n");
+    for (int cont = 1; cont <= num; cont++) {
+        printf("%i\n", cont);
+    }
+    return 0;
+}
+EX02
+#include <stdio.h>
+int main(){
+    int mes,dia,ano,diasmes,totaldias=0;
+    printf("Insira o dia, mes e ano (dia/mes/ano):\n");
+    scanf("%i %i %i",&dia,&mes,&ano);
+    if (mes<1 || mes>12 || dia<1 || dia>31 || ano<1){
+        printf("Data invalida!\n"); 
+        return 1;
+    }
+    if (mes==2){
+        diasmes=28;
+    }else if (mes==4 || mes==6 || mes==9 || mes==11){
+        diasmes=30;
+    }else{
+        diasmes=31;
+    }
+    if (dia>diasmes){
+        printf("Data invalida!\n");
+        return 1;
+    }
+   for (int i = 0; i <= mes; i++){
+    if (i==2){
+        totaldias=totaldias+28;
+    }else if (i==4 || i==6 || i==9 || i==11){
+        totaldias=totaldias+30;
+    }else if (i==1 || i==3 || i==5 || i==7 || i==8 || i==10 || i==12){
+        totaldias=totaldias+31;
+    }
+}
+    printf("A data %d/%d/%d corresponde ao dia %d do ano.\n", dia, mes, ano, totaldias);
+    return 0;
+}
+EX03
+#include <stdio.h>
+int main(){
+    int codigo, valortotal=0, quantidade=0, continuar;
+    float desconto, valorCD;
+    for (int sent=1;sent==1;){
+        printf("\nMEDICAMENTOS\n");
+        printf("1) Paracetamol - R$ 10.00\n");
+        printf("2) Ibuprofeno - R$ 15.00\n");
+        printf("3) Omeprazol - R$ 20.00\n");
+        printf("4) Loratadina - R$ 12.00\n");
+        printf("0) Sair\n");
+        printf("\nDigite o codigo do medicamento:\n");
+        scanf("%i",&codigo);
+        if (codigo==1){
+            printf("\nDigite a quantidade:\n");
+            scanf("%i",&quantidade);
+            valortotal=10;   
+            for (int cont = 1; cont<quantidade; cont++){
+                valortotal=valortotal+valortotal;
+            }
+            desconto=valortotal*0.10;
+            valorCD=valortotal-desconto;
+            printf("\nValor total com 10%% de desconto: R$ %.2f",valorCD);
+            sent=0;
+        }else if (codigo==2){
+            printf("\nDigite a quantidade:\n");
+            scanf("%i",&quantidade);
+            valortotal=15;
+            for ( int cont = 1; cont<quantidade; cont++){
+                valortotal=valortotal+valortotal; 
+            }
+            desconto=valortotal*0.10;
+            valorCD=valortotal-desconto;
+            printf("\nValor total com 10%% de desconto: R$ %.2f",valorCD);
+            sent=0;
+        }else if (codigo==3){
+            printf("\nDigite a quantidade:\n");
+            scanf("%i",&quantidade);
+            valortotal=20;
+            for ( int cont = 1; cont<quantidade; cont++){
+                valortotal=valortotal+valortotal; 
+            }
+            desconto=valortotal*0.10;
+            valorCD=valortotal-desconto;
+            printf("\nValor total com 10%% de desconto: R$ %.2f",valorCD);
+            sent=0;
+        }else if (codigo==4){
+            printf("\nDigite a quantidade:\n");
+            scanf("%i",&quantidade);
+            valortotal=12;
+            for ( int cont = 1; cont<quantidade; cont++){
+                valortotal=valortotal+valortotal; 
+            }
+            desconto=valortotal*0.10;
+            valorCD=valortotal-desconto;
+            printf("\nValor total com 10%% de desconto: R$ %.2f",valorCD);
+            sent=0;
+        }else if (codigo==0){
+            printf("\nVocê saiu!");
+            sent=0;
+        }else{
+            printf("\nDigite um código válido!\n");
+        }   
+    }
+    return 0;
+}
+EX04
+#include <stdio.h>
+int main() {
+    int quantidade, numero, menor;    
+    printf("Quantos numeros voce deseja digitar:\n");
+    scanf("%d", &quantidade);
+    printf("Digite o 1 numero:\n");
+    scanf("%d", &menor);
+    for (int cont=2; cont<=quantidade; cont++){
+        printf("Digite o %d numero:\n",cont);
+        scanf("%d", &numero);
+        if (numero < menor){
+            menor = numero;
+        }
+    }
+    printf("O menor numero e: %d\n", menor);
+    return 0;
+}
+EX05
+#include <stdio.h>
+int main() {
+    int valor, intervalo1=0, intervalo2=0, intervalo3=0, intervalo4=0;
+    printf("Digite 15 valores, um de cada vez:\n");
+    for (int cont = 1; cont<=15; cont++) {
+        printf("\nDigite o %do valor: ", cont);
+        scanf("%d", &valor);
+        if (valor >= 0 && valor <= 25) {
+            intervalo1++;
+        } else if (valor >= 26 && valor <= 50){
+            intervalo2++;
+        } else if (valor >= 51 && valor <= 75){
+            intervalo3++;
+        } else if (valor >= 76 && valor <= 100){
+            intervalo4++;
+        }
+    }
+    printf("\nValores no intervalo 0-25: %d\n", intervalo1);
+    printf("Valores no intervalo 26-50: %d\n", intervalo2);
+    printf("Valores no intervalo 51-75: %d\n", intervalo3);
+    printf("Valores no intervalo 76-100: %d\n", intervalo4);
+    return 0;
+}
+EX06
+#include <stdio.h>
+#include <math.h>
+int main() {
+    float valor;
+    for (int sent=1; sent==1;){
+        printf("\nDigite um valor: (-1 para encerrar)\n");
+        scanf("%f",&valor);
+        if (valor==-1)
+        {
+            printf("Voce saiu!");
+            sent=0;
+            break;
+        }
+        printf("\nValor: %.2f\n", valor);
+        printf("Quadrado: %.2f\n", valor * valor);
+        printf("Cubo: %.2f\n", valor * valor * valor);
+        printf("Raiz Quadrada: %.2f\n", sqrt(valor));
+    }
+    return 0;
+}
+EX07
+#include <stdio.h>
+int main() {
+    printf("Numeros que a sobra da divisao por 11 e 5:\n");
+    for (int cont=1000; cont<=1999; cont++)
+    {
+        if (cont%11==5){
+            printf("%i\n",cont);
+        }    
+    }   
+    return 0;
+}
+EX08
+#include <stdio.h>
+int main(){
+    float chico=1.50, ze=1.10;
+    int anosTotal;
+        for (int anos=1; ze<=chico; anos++){
+            chico=chico+0.02;
+            ze=ze+0.03;
+            anosTotal=anos;
+            printf("%i\n",anos);
+        }
+    printf("Serao necessarios %i anos para que ze seja maior que chico.\n", anosTotal);
+    return 0;
+}
+EX09
+#include <stdio.h>
+int main(){
+    char nome[15];
+    float valor, desconto;
+    for (int cont = 0; cont < 150; cont++){
+        printf("\nDigite o nome do cliente:\n");
+        scanf("%s",&nome);
+        printf("\nDigite o valor gasto pelo cliente %s no ano passado:\n",nome);
+        scanf("%f",&valor);
+        if (valor>0 && valor<500000)
+        {
+            desconto=valor*0.10;
+            printf("\nAnunciamos que voce recebeu um bonus de 10%% do valor gasto em suas compras no ano passado!\n");
+            printf("%s, Voce recebeu R$ %.2f de bonus!\n",nome,desconto);  
+        }else{
+            desconto=valor*0.15;
+            printf("\nAnunciamos que voce recebeu um bonus de 15%% do valor gasto em suas compras no ano passado!\n");
+            printf("%s, Voce recebeu R$ %.2f de bonus!\n",nome,desconto);
+        }
+    } 
+    return 0;
+}
+EX10
+#include <stdio.h>
+int main(){
+    int matricula;
+    float nota;
+    for (int cont = 0; cont < 40; cont++){
+        printf("\nInsira o numero de matricula do aluno:\n");
+        scanf("%i",&matricula);
+        printf("\nInsira a nota final do aluno: (modelo: 5.0 / 10.0)\n");
+        scanf("%f",&nota);
+        if (nota>=0 && nota<5.0){
+            printf("\nO aluno %i obteve uma nota final de %.1f pontos.\n",matricula,nota);
+            printf("Sua classificacao e: D\n");
+        }else if (nota>=5.0 && nota<7.0){
+            printf("\nO aluno %i obteve uma nota final de %.1f pontos.\n",matricula,nota);
+            printf("Sua classificacao e: C\n");
+        }else if (nota>=7.0 && nota<8.0){
+            printf("\nO aluno %i obteve uma nota final de %.1f pontos.\n",matricula,nota);
+            printf("Sua classificacao e: B\n");
+        }else if (nota>=9.0 && nota<=10.0){
+            printf("\nO aluno %i obteve uma nota final de %.1f pontos.\n",matricula,nota);
+            printf("Sua classificacao e: A\n");
+        }else{
+            printf("\nDigite uma nota no formato valido!\n");
+            cont--;
+        }
+    } 
+    return 0;
+}
+EX11
+#include <stdio.h>
+int main(){
+    int n; 
+    float soma = 0;
+    printf("\nInsira um valor inteiro e positivo para 'N':\n");
+    scanf("%i",&n);
+    if (n<0){
+        printf("Insira um valor positivo!");
+        return 1;
+    }
+    printf("\nS = ");
+    for (int cont = 1; cont <= n; cont++) {
+        soma += 1.0 / cont; 
+        if (cont > 1) {
+            printf(" + "); 
+        }
+        printf("1/%d", cont); 
+    }
+    printf(" = %.2f\n", soma); 
+    return 0;
+}

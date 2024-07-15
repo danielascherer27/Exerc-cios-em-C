@@ -1,0 +1,397 @@
+EX 01
+#include <stdio.h>
+int main(){
+    int numero=50; 
+    while (numero<=250){ 
+       printf("Numero: %d\n", numero);
+       numero++;
+    }
+    return 0;
+}
+
+EX 02
+#include <stdio.h>
+int main(){
+    int numero=3000;
+    while (numero>=100){
+        printf("Numero: %d\n", numero);
+        numero--;
+    }
+    return 0;    
+}
+
+EX 03
+#include <stdio.h>
+int main(){
+    int numero=0, div;
+    while (numero<=30){
+       div=numero%2;
+       if(div==0){
+        printf("Numero: %d\n", numero);
+       }
+       numero++;
+    }
+    return 0;    
+}
+
+Ex 04
+#include <stdio.h>
+int main(){
+    int numero=29, div;
+    while (numero>=0){
+       div=numero%2;
+       if(div==1){
+        printf("Numero: %d\n", numero);
+       }
+       numero--;
+    }
+    return 0;    
+}
+
+
+Ex 05
+#include <stdio.h>
+int main(){
+    int numero=0, soma=0;
+    while (numero<=100){
+        soma+=numero;
+        numero++;
+        printf("Numero: %d\n", soma);
+    }
+    return 0;    
+}
+
+
+Ex 06
+#include <stdio.h>
+int main(){
+    int numero=600, soma=0;
+    while (numero<=1000){
+        soma+=numero;
+        numero++;
+        printf("Numero: %d\n", soma);
+    }
+    return 0;    
+}
+
+Ex 07
+#include <stdio.h>
+int main(){
+    int multi=1, cont=1;
+    while (cont<=6){
+        multi*=cont;
+        cont++;
+        printf("%d\n", multi);
+    }
+    return 0;    
+}
+
+Ex 08
+#include <stdio.h>
+int main(){
+    int multi=1, cont=1, numero;
+    printf("Digite qualquer numero para ser fatorado:\n");
+    scanf("%i", &numero);
+    while (cont<=numero){
+        multi*=cont;
+        cont++;
+        printf("%d\n", multi);
+    }
+    return 0;    
+}
+
+Ex 09
+#include <stdio.h>
+int main(){
+    int cont=5, somNumero=0;
+    float media, soma;
+    while (cont<=150){
+        soma+=cont;
+        somNumero++;
+        cont++;   
+    }
+    media=soma/somNumero;
+    printf("A media dos numeros eh: %.2f\n", media);
+    return 0;    
+}
+
+
+Ex 10
+#include <stdio.h>
+int main(){
+    int cont=200, somNumero=0;
+    float media, soma;
+    while (cont<=3500){
+        soma+=cont;
+        somNumero++;
+        cont++;   
+    }
+    media=soma/somNumero;
+    printf("A media dos numeros eh: %.2f\n", media);
+    return 0;    
+}
+
+
+
+Ex 11
+#include <stdio.h>
+int main(){
+    int numero=111, div;
+    while (numero<=350){
+       div=numero%2;
+       if(div==1){
+        printf("Numero: %d\n", numero);
+       }
+       numero++;
+    }
+    return 0;    
+}
+
+
+Ex 12
+#include <stdio.h>
+int main(){
+    int numero=0, div;
+    while (numero<=2500){
+       div=numero%2;
+       if(div==1){
+        printf("Numero: %d\n", numero);
+       }
+       numero++;
+    }
+    return 0;    
+}
+
+
+Ex 13
+#include <stdio.h>
+int main(){
+    int quant, inicio, fim=0;
+    float media, soma=0;
+    printf("Digite o numero do inicio:\n");
+    scanf("%i", &inicio);
+    printf("Digite o numero do fim:\n");
+    scanf("%i", &fim);
+    if (inicio<=fim){
+        while (inicio<=fim){
+            soma+=inicio;
+            quant++;
+            inicio++;
+        }media=soma/quant;
+        printf("A media dos dois numeros eh: %.2f", media);    
+    }else{
+        printf("Digite um numero do inicio maior que do fim.");
+    }
+    return 0;    
+}
+
+Ex 14
+#include <stdio.h>
+int main(){
+    char nome[50];
+    int cont=0;
+    while (cont<3){
+        printf("Digite o nome:\n");
+        scanf("%s", nome);
+        printf("Nome: %s\n", nome);
+        cont++;
+    }
+    return 0;    
+}
+
+Ex15 
+#include <stdio.h>
+int main(){
+    char nome[50];
+    int cont=0, nota1, nota2, nota3;
+    float media;
+    while (cont<5){
+        printf("Digite seu nome:\n");
+        scanf("%s", &nome);
+        printf("Digite suas 3 notas:\n");
+        scanf("%i %i %i", &nota1, &nota2, &nota3);
+        media=(nota1+nota2+nota3)/3;
+        printf("Nome: %s\n", nome);
+        printf("A media das notas eh: %2.f\n", media);  
+        cont++;
+    }
+    return 0;    
+}
+
+Ex16
+#include <stdio.h>
+int main(){
+    int sent=1, nota1, nota2, nota3, menu;
+    float media;
+    char nome[50];
+    while (sent==1){
+        printf("Digite 1 para calcular a media das 3 notas.\n");
+        printf("Digite 0 para fehcar.\n");
+        scanf("%i", &menu);    
+        if (menu==1){
+            printf("Digite seu nome:\n");
+            scanf("%s", &nome);
+            printf("Digite suas 3 notas:\n");
+            scanf("%i %i %i", &nota1, &nota2, &nota3);
+            media=(nota1+nota2+nota3)/3;
+            printf("A media das suas 3 notas do aluno(a) %s eh: %.2f\n", nome, media); 
+        }else if (menu==0){
+            printf("\nVoce fechou:(");
+            sent=0;
+        }       
+    }
+    return 0;    
+}
+
+Ex18
+#include <stdio.h>
+int main(){
+    int cont=0, num, numero, soma=0;
+    printf("Digite a quantidade numeros que voce deseja somar:\n");
+    scanf("%i", &num);
+    while (cont<num){
+        printf("\nDigite o numero:\n");
+        scanf("%i", &numero);
+        soma=soma+numero;
+        cont++;
+    }
+    printf("A soma dos numeros eh: %i", soma);    
+    return 0;    
+}
+
+Ex19
+#include <stdio.h>
+int main(){
+    int cont=0, num, numero, soma=0;
+    printf("Digite a quantidade numeros que voce deseja somar:\n");
+    scanf("%i", &num);
+    while (cont<num){
+        printf("\nDigite o numero:\n");
+        scanf("%i",&numero);
+        if (numero>5){
+            soma=soma+numero;
+        }
+        cont++;
+    }
+    printf("A soma dos numeros maiores que 5 eh: %i", soma);
+    return 0;    
+}
+
+Ex20
+#include <stdio.h>
+int main() {
+    int quantidade, numero, negativos = 0;
+    printf("Digite a quantidade de numeros a serem lidos: ");
+    scanf("%d", &quantidade);
+    int i = 0;
+    while (i < quantidade) {
+        printf("Digite o numero %d: ", i + 1);
+        scanf("%d", &numero);
+        if (numero < 0) {
+            negativos++;
+        }    
+        i++;
+    }
+    printf("Total de numeros negativos: %d\n", negativos);
+    return 0;
+}
+
+Ex21
+#include <stdio.h>
+int main() {
+    int num somaPosi = 0;
+    printf("Digite os numeros (digite 0 para encerrar):\n");
+    while (1){
+        scanf("%d", &num;)
+        if (numero == 0){
+            break;
+        }if (num> 0){
+            somaPosi += num
+        }
+    } 
+    printf("A soma dos numeros positivos eh: %d", somaPosi);   
+    return 0;
+}
+
+Ex22
+#include <stdio.h>
+int main(){
+    int cont=0,menu, num, numero, soma=0, quantnum=0;
+        printf("Digite a quantidade de numeros que voce deseja somar:\n"); 
+        scanf("%i", &num);
+        while (cont<num){ 
+            printf("\nDigite o numero:\n");
+            scanf("%i", &numero);
+            if (numero>=10){
+                soma=soma+numero;
+            } else if (numero<10){
+                quantnum=quantnum+1;
+            }
+            cont++;
+        }        
+        printf("A soma dos numeros positivos eh: %i\n", soma);
+        printf("\nA quantidade de numeros menores que 10 eh: %i", quantnum);
+    return 0;    
+}
+
+Ex23
+#include <stdio.h>
+int main(){
+    int cont=0, num=1;
+        while (cont<20){
+            printf("%i\n", num);
+            num=num*3;
+            cont++;
+        }
+    return 0;    
+}
+
+
+Ex24
+#include <stdio.h>
+int main(){
+    float n1=0, n2, potencia=1, cont=0;
+    printf("Digite dois numeros:\n");
+    scanf("%f %f", &num1, &num2);
+    while (cont<num2){
+        potencia*=num1;
+        cont++;
+    }
+    printf("A potencia de %.2f elevado %.2f e: %.2f", n1, n2, potencia);
+    return 0;    
+}
+
+
+Ex25
+#include <stdio.h>
+int main(){
+    float n1=0, n2, result=0, cont=0;
+    printf("Digite dois numeros:\n");
+    scanf("%f %f", &n1, &n2);
+    while (cont<n2){
+        result=result+n1;
+        cont++;
+    }
+    printf("A soma sucessiva de %.2f e %.2f e: %.2f", n1, n2, result);
+    return 0;    
+}
+
+
+
+Ex26
+#include <stdio.h>
+int main(){
+    int cod, quant, cal;
+    printf("1= Cachorro quente / 2,50");
+    printf("2= X Salada / 3,00");
+    printf("3= X Tudo / 3,50");
+    printf("4= Refrigerante / 2,50");
+    printf("Digite o codigo do produto que voce deseja comprar:\n");
+    scanf("%i", &cod);
+    if (cod==1){
+        printf("Quantos voce Cachorros quentes que voce deseja comprar?\n");
+        scanf("%ii", &quant);
+        cal=quant*2.50;
+    }
+    return 0;    
+}

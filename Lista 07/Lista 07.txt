@@ -1,0 +1,568 @@
+Ex 01:
+#include <stdio.h>
+
+void inv(float v[], int t) {
+    for(int i = t - 1; i >= 0; i--) {
+        printf("%.2f ", v[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    float v[10];
+
+    printf("Digite 10 numeros reais:\n");
+    for(int i = 0; i < 10; i++) {
+        printf("Elemento %d: ", i + 1);
+        scanf("%f", &v[i]);
+    }
+
+    printf("Elementos na ordem inversa:\n");
+    inv(v, 10);
+
+    return 0;
+}
+
+Ex 02:
+
+#include <stdio.h>
+void constroiB(int a[], int b[], int t) {
+    for(int i = 0; i < t; i++) {
+        b[i] = a[i] * 3;
+    }
+}
+int main() {
+    int a[8], b[8];
+    printf("Digite 8 numeros inteiros:\n");
+    for(int i = 0; i < 8; i++) {
+        printf("Elemento %d: ", i + 1);
+        scanf("%d", &a[i]);
+    }
+    constroiB(a, b, 8);
+    printf("Vetor B:\n");
+    for(int i = 0; i < 8; i++) {
+        printf("%d ", b[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+Ex 03:
+
+#include <stdio.h>
+#include <stdlib.h>
+void calDifere(int vetorA[20], int vetorB[20], int vetorD[20]) {
+    for (int j = 0; j < 20; j++) {
+        vetorD[j] = vetorA[j] - vetorB[j];
+        printf("======\n");
+        printf("Valor A = %d\n", vetorA[j]);
+        printf("Valor B = %d\n", vetorB[j]);
+        printf("Diferenca (A - B) = %d\n", vetorD[j]);
+    }
+}
+int main() {
+    int a[20], b[20], d[20];
+    for (int j = 0; j < 20; j++) {
+        a[j] = rand() % 100;
+        b[j] = rand() % 100;
+    }
+    calDifere(a, b, d);
+    return 0;
+}
+
+
+Ex 04:
+
+#include <stdio.h>
+#include <stdlib.h>
+void calQuad(int arr[15], int quad[15]) {
+    for (int j = 0; j < 15; j++) {
+        quad[j] = arr[j] * arr[j];
+        printf("======\n");
+        printf("Valor = %d\n", arr[j]);
+        printf("Quadrado = %d\n", quad[j]);
+    }
+}
+int main() {
+    int val[15];
+    int quadVal[15];
+    for (int j = 0; j < 15; j++) {
+        val[j] = rand() % 100;
+    }
+    calQuad(val, quadVal);
+    return 0;
+}
+
+
+Ex 05:
+
+#include <stdio.h>
+#include <stdlib.h>
+int calFat(int num) {
+    if (num == 0) return 1;
+    int fat = 1;
+    for (int j = 1; j <= num; j++) {
+        fat *= j;
+    }
+    return fat;
+}
+void exibFat(int val[15], int fat[15]) {
+    for (int j = 0; j < 15; j++) {
+        fat[j] = calFat(val[j]);
+        printf("======\n");
+        printf("Valor = %d\n", val[j]);
+        printf("Fatorial = %d\n", fat[j]);
+    }
+}
+int main() {
+    int lista[15], result[15];
+    for (int j = 0; j < 15; j++) {
+        lista[j] = rand() % 15;
+    }
+    exibFat(lista, result);
+    return 0;
+}
+
+Ex 06:
+
+#include <stdio.h>
+#include <stdlib.h>
+void combVet(int arrA[15], int arrB[15], int arrC[30], int tam) {
+    for (int j = 0; j < tam; j++) {
+        arrC[j] = arrA[j];
+        arrC[j + tam] = arrB[j];
+    }
+}
+
+void imprimir(int vetor[], int tam) {
+    for (int j = 0; j < tam; j++) {
+        printf("%d ", vetor[j]);
+    }
+    printf("\n");
+}
+int main() {
+    int tam = 15;
+    int a[tam], b[tam], c[2 * tam];
+    for (int j = 0; j < tam; j++) {
+        a[j] = rand() % 100;
+        b[j] = rand() % 100;
+    }
+    combVet(a, b, c, tam);
+    printf("Vetor A: ");
+    imprimir(a, tam);
+    printf("Vetor B: ");
+    imprimir(b, tam);
+    printf("Vetor C (A + B): ");
+    imprimir(c, 2 * tam);
+    return 0;
+}
+
+
+Ex 07:
+
+#include <stdio.h>
+#include <stdlib.h>
+void invVet(int original[20], int inv[20], int tam) {
+    for (int j = 0; j < tam; j++) {
+        inv[j] = original[tam - j - 1];
+    }
+}
+void exibVet(int vetorA[20], int vetorB[20]) {
+    printf("Vetor A = ");
+    for (int j = 0; j < 20; j++) {
+        printf("%d ", vetorA[j]);
+    }
+    printf("\nVetor B = ");
+    for (int j = 0; j < 20; j++) {
+        printf("%d ", vetorB[j]);
+    }
+    printf("\n");
+}
+int main() {
+    int tamanho = 20;
+    int a[tamanho], b[tamanho];
+    for (int j = 0; j < tamanho; j++) {
+        a[j] = rand() % 100;
+    }
+    invVet(a, b, tamanho);
+    exibVet(a, b);
+    return 0;
+}
+
+
+Ex 08:
+
+#include <stdio.h>
+#include <stdlib.h>
+void combVet(int arrA[5], int arrB[5], int arrC[5], int arrD[15], int tam) {
+    for (int j = 0; j < tam; j++) {
+        arrD[j] = arrA[j];
+        arrD[j + tam] = arrB[j];
+        arrD[j + 2 * tam] = arrC[j];
+    }
+}
+void imprimir(int vetor[], int tam) {
+    for (int j = 0; j < tam; j++) {
+        printf("%d ", vetor[j]);
+    }
+    printf("\n");
+}
+int main() {
+    int tam = 5;
+    int a[tam], b[tam], c[tam], d[3 * tam];
+    for (int j = 0; j < tam; j++) {
+        a[j] = rand() % 100;
+        b[j] = rand() % 100;
+        c[j] = rand() % 100;
+    }
+    combVet(a, b, c, d, tam);
+    printf("Vetor A: ");
+    imprimir(a, tam);
+    printf("Vetor B: ");
+    imprimir(b, tam);
+    printf("Vetor C: ");
+    imprimir(c, tam);
+    printf("Vetor D (A+B+C): ");
+    imprimir(d, 3 * tam);
+    return 0;
+}
+
+
+Ex 09:
+
+#include <stdio.h>
+#include <stdlib.h>
+void calInv(int orig[10], int inv[10]) {
+    for (int j = 0; j < 10; j++) {
+        inv[j] = -orig[j];
+    }
+}
+void exib(int vetorA[10], int vetorB[10]) {
+    printf("Vetor A = ");
+    for (int j = 0; j < 10; j++) {
+        printf("%d ", vetorA[j]);
+    }
+    printf("\nVetor B = ");
+    for (int j = 0; j < 10; j++) {
+        printf("%d ", vetorB[j]);
+    }
+    printf("\n");
+}
+int main() {
+    int tam = 10;
+    int a[tam], b[tam];
+    for (int j = 0; j < tam; j++) {
+        a[j] = rand() % 100;
+    }
+    calInv(a, b);
+    exib(a, b);
+    return 0;
+}
+
+
+Ex 10:
+
+#include <stdio.h>
+#include <stdlib.h>
+void calMet(float arrA[10], float arrB[10]) {
+    for (int j = 0; j < 10; j++) {
+        arrB[j] = arrA[j] / 2;
+    }
+}
+void exib(float vetorA[10], float vetorB[10]) {
+    printf("Vetor A = ");
+    for (int j = 0; j < 10; j++) {
+        printf("%.2f ", vetorA[j]);
+    }
+    printf("\nVetor B = ");
+    for (int j = 0; j < 10; j++) {
+        printf("%.2f ", vetorB[j]);
+    }
+    printf("\n");
+}
+int main() {
+    int tam = 10;
+    float a[tam], b[tam];
+    for (int j = 0; j < tam; j++) {
+        a[j] = rand() % 100;
+    }
+    calMet(a, b);
+    exib(a, b);
+    return 0;
+}
+
+
+Ex 11:
+
+#include <stdio.h>
+#include <stdlib.h>
+void geraMul(int num, int vetResult[10]) {
+    for (int i = 0; i < 10; i++) {
+        vetResult[i] = num * (i + 1);
+    }
+}
+void exibResult(int num, int vetResult[10]){
+    printf("\nResultados:\n");
+    for (int i = 0; i < 10; i++) {
+        printf("%d x %d = %d\n", num, i + 1, vetResult[i]);
+    }
+}
+int main() {
+    int num;
+    int vetorResultado[10];
+    printf("Digite um numero: ");
+    scanf("%d", &num);
+    geraMul(num, vetorResultado);
+    exibResult(num, vetorResultado);
+    return 0;
+}
+
+
+Ex 12:
+
+#include <stdio.h>
+#include <stdlib.h>
+void convertF(float tempC[20], float tempF[20]) {
+    for (int i = 0; i < 20; i++) {
+        tempF[i] = (tempC[i] * 9 / 5) + 32;
+    }
+}
+void exibTemp(float tempC[20], float tempF[20]){
+    for (int i = 0; i < 20; i++) {
+        printf("%.1f C = %.1f F\n", tempC[i], tempF[i]);
+    }
+}
+int main() {
+    float tempC[20], tempF[20];
+    for (int i = 0; i < 20; i++) {
+        tempC[i] = rand() % 100;
+    }
+    convertF(tempC, tempF);
+    exibTemp(tempC, tempF);
+    return 0;
+}
+
+
+Ex 13:
+
+#include <stdio.h>
+#include <stdlib.h>
+void procesVet(int vetOrig[12], int vetProces[12]) {
+    for (int i = 0; i < 12; i++) {
+        if (vetOrig[i] % 2 == 0) {
+            vetProces[i] = vetOrig[i];
+        } else {
+            vetProces[i] = vetOrig[i] * 2;
+        }
+    }
+}
+void exibVet(int vetOrig[12], int vetProces[12]){
+    for (int i = 0; i < 12; i++) {
+        printf("Original: %d, Processado: %d\n", vetOrig[i], vetProces[i]);
+    }
+}
+int main() {
+    int vetOrig[12], vetProces[12];
+    for (int i = 0; i < 12; i++) {
+        vetOrig[i] = rand() % 100;
+    }
+    procesVet(vetOrig, vetProces);
+    exibVet(vetOrig, vetProces);
+
+    return 0;
+}
+
+Ex 14:
+
+#include <stdio.h>
+#include <stdlib.h>
+void distrVet(int vetA[6], int vetB[6], int vetC[6], int vetD[6]) {
+    int indC = 0, indD = 0;
+    for (int i = 0; i < 6; i++) {
+        if (vetA[i] % 2 == 0 && vetB[i] % 2 == 0) {
+            vetD[indD++] = vetA[i];
+            vetD[indD++] = vetB[i];
+        } else {
+            vetC[indC++] = vetA[i];
+            vetC[indC++] = vetB[i];
+        }
+    }
+}
+void exibVet(int vetA[6], int vetB[6], int vetC[6], int vetD[6]){
+    printf("Vetor A: ");
+    for (int i = 0; i < 6; i++) printf("%d ", vetA[i]);
+    printf("\nVetor B: ");
+    for (int i = 0; i < 6; i++) printf("%d ", vetB[i]);
+    printf("\nVetor C: ");
+    for (int i = 0; i < 6; i++) printf("%d ", vetC[i]);
+    printf("\nVetor D: ");
+    for (int i = 0; i < 6; i++) printf("%d ", vetD[i]);
+}
+int main() {
+    int vetA[6], vetB[6], vetC[6], vetD[6];
+
+    for (int i = 0; i < 6; i++) {
+        vetA[i] = rand() % 100;
+        vetB[i] = rand() % 100;
+    }   
+    distrVet(vetA, vetB, vetC, vetD);
+    exibVet(vetA, vetB, vetC, vetD);
+    return 0;
+}
+
+
+Ex 15:
+
+#include <stdio.h>
+#include <stdlib.h>
+void concaVet(int vetA[10], int vetB[10], int vetConca[20]) {
+    for (int i = 0; i < 10; i++) {
+        vetConca[i] = vetA[i];
+        vetConca[i + 10] = vetB[i];
+    }
+}
+void imprimirVet(int vetor[], int tamanho) {
+    for (int i = 0; i < tamanho; i++) {
+        printf("%d ", vetor[i]);
+    }
+    printf("\n");
+}
+int main() {
+    int vetA[10], vetB[10], vetConca[20];
+
+    for (int i = 0; i < 10; i++) {
+        vetA[i] = rand() % 100;
+        vetB[i] = rand() % 100;
+    }
+    concaVet(vetA, vetB, vetConca);
+    printf("Vetor A: ");
+    imprimirVet(vetA, 10);
+    printf("Vetor B: ");
+    imprimirVet(vetB, 10);
+    printf("Vetor Concatenado (A + B): ");
+    imprimirVet(vetConca, 20);
+    return 0;
+}
+
+
+Ex 16:
+
+#include <stdio.h>
+int contNeg(int vetor[], int tamanho) {
+    int contador = 0;
+    for (int i = 0; i < tamanho; i++) {
+        if (vetor[i] < 0) {
+            contador++;
+        }
+    }
+    return contador;
+}
+int main() {
+    int vetor[6];
+    printf("Digite os elementos do vetor:\n");
+    for (int i = 0; i < 6; i++) {
+        printf("Elemento %d: ", i + 1);
+        scanf("%d", &vetor[i]);
+    }
+    int neg = contNeg(vetor, 6);
+    printf("O vetor contem %d elementos negativos.\n", neg);    
+    return 0;
+}
+
+
+Ex 17:
+
+#include <stdio.h>
+#include <stdlib.h>
+void transfVet(int vetOrig[15], int vetTransf[15]) {
+    for (int i = 0; i < 15; i++) {
+        vetTransf[i] = (vetOrig[i] % 2 == 0) ? 2 : 1;
+    }
+}
+void exibVet(int vetOrig[15], int vetTransf[15]){
+    printf("Vetor Original: ");
+    for (int i = 0; i < 15; i++) {
+        printf("%d ", vetOrig[i]);
+    }
+    printf("\nVetor Transformado: ");
+    for (int i = 0; i < 15; i++) {
+        printf("%d ", vetTransf[i]);
+    }
+    printf("\n");
+}
+int main() {
+    int vetOrig[15], vetTransf[15];
+    for (int i = 0; i < 15; i++) {
+        vetOrig[i] = rand() % 100;
+    }
+    transfVet(vetOrig, vetTransf);
+    exibVet(vetOrig, vetTransf);
+    return 0;
+}
+
+
+Ex 18:
+
+#include <stdio.h>
+void analiVet(int vetor[12]) {
+    int maior = vetor[0], menor = vetor[0], soma = 0;
+    for (int i = 0; i < 12; i++) {
+        if (vetor[i] > maior) {
+            maior = vetor[i];
+        }
+        if (vetor[i] < menor) {
+            menor = vetor[i];
+        }
+        soma += vetor[i];
+    }
+    float media = soma / 12.0;
+    printf("Maior elemento: %d\n", maior);
+    printf("Menor elemento: %d\n", menor);
+    printf("Média dos elementos: %.2f\n", media);
+}
+int main() {
+    int vetor[12];
+    printf("Digite 12 numeros:\n");
+    for (int i = 0; i < 12; i++) {
+        printf("Numero %d: ", i + 1);
+        scanf("%d", &vetor[i]);
+    }
+    analiVet(vetor);
+    return 0;
+}
+
+
+Ex 19:
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+void compApost(int aposta[6], int sorteio[6]) {
+    int acertos = 0;
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 6; j++) {
+            if (aposta[i] == sorteio[j]) {
+                acertos++;
+            }
+        }
+    }
+    printf("Numero de acertos: %d\n", acertos);
+}
+int main() {
+    int aposta[6], sorteio[6];
+    srand(time(NULL)); 
+    printf("Digite seus 6 numeros da aposta:\n");
+    for (int i = 0; i < 6; i++) {
+        printf("Numero %d: ", i + 1);
+        scanf("%d", &aposta[i]);
+    }
+    printf("Numeros sorteados: ");
+    for (int i = 0; i < 6; i++) {
+        sorteio[i] = rand() % 60 + 1;
+        printf("%d ", sorteio[i]);
+    }
+    printf("\n");
+    compApost(aposta, sorteio);
+    return 0;
+}
+

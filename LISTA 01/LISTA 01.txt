@@ -1,0 +1,475 @@
+Algoritmo "exercicio01"
+//) Fazer um algoritmo que mostre na tela o nome e a idade de uma pessoa
+
+Var
+   nome: caractere
+   idade: inteiro
+
+Inicio
+      escreval("Digite o seu nome:")
+      leia(nome)
+      escreval("Digite sua idade")
+      leia(idade)
+      escreval("Seu nome eh:",nome)
+      leia(nome)
+      escreval("Seu nome eh:",idade)
+      leia(idade)
+Fimalgoritmo
+
+
+
+Algoritmo "exercicio2"
+// Fazer um algoritmo para informar a area de um triangulo, onde a area
+
+Var
+   base, altura, resultado: real
+
+Inicio
+
+      escreval("Digite a altura do triangulo")
+      leia(altura)
+      escreval("Digite a base do triangulo")
+      leia(base)
+      
+      resultado<-(base*altura)/2
+      
+      escreval("O resultado final eh:", resultado)
+      
+Fimalgoritmo
+
+
+
+Algoritmo "exercicio3"
+// Dadas 3 notas fazer um algoritmo para calcular a media aritmetica
+
+Var
+   nota1, nota2, nota3, resultado: real
+   
+Inicio
+
+    escreval("Digita a nota 1:")
+    leia(nota1)
+    escreval("Digita a nota 2:")
+    leia(nota2)
+    escreval("Digita a nota 3:")
+    leia(nota3)
+
+    resultado <- (nota1+nota2+nota3)/3
+ 
+    escreval("A sua media aritmetica eh:", resultado)
+    
+Fimalgoritmo
+
+
+
+
+Algoritmo "exercicio4"
+// Fazer um algoritmo para calcular o salário liquido de um empregado onde sao dados os seguintes valores
+
+Var
+   sb, des, ad, resultado: real
+
+Inicio
+
+   escreval("Digite o salario bruto:")
+   leia(sb)
+   escreval("Digite os descontos:")
+   leia(des)
+   escreval("Digite os adicionais:")
+   leia(ad)
+
+   resultado <- sb+des+ad
+
+   escreval("Seu salario liquido eh:", resultado)
+
+Fimalgoritmo
+
+
+
+Algoritmo "exercicio5"
+// Dado um quadrado com uma medida de lado informada pelo usuario, calcular a sua
+area e seu perimetro
+Var
+ area, perimetro, lado: real
+
+
+Inicio
+
+      escreval("Digite a medida do lado de um quadrado:")
+      leia(lado)
+      
+      perimetro <- lado+lado+lado+lado
+      area <- lado*lado
+      
+      escreval("O perimetro desse quadrado eh:", perimetro)
+      escreval("A area desse quadrado eh:", area)
+
+Fimalgoritmo
+
+
+Algoritmo "exercicio6"
+// Faca um algoritmo que leia a largura e comprimento de um terreno e casa
+
+Var
+    largTer, compriTer, largCasa, compriCasa, areaLivre: real
+
+Inicio
+      escreval("Digite o valor da largura do terreno em metros:")
+      leia(largTer)
+      escreval("Digite o valor da comprimento do terreno em metros:")
+      leia(compriTer)
+      escreval("Digite o valor da largura da casa em metros:")
+      leia(largCasa)
+      escreval("Digite o valor da comprimento da casa em metros:")
+      leia(compriCasa)
+      
+      areaLivre <- (largTer * compriTer) - (largCasa * compriCasa)
+      
+      escreval("O valor da area livre eh:", areaLivre, " metros")
+
+Fimalgoritmo
+
+
+Algoritmo "exercicio7"
+// Fazer um algoritmo que leia as 3 notas de um aluno e calcule a media final deste aluno
+
+Var
+   nota1, nota2, nota3, media : real
+
+
+Inicio
+      escreval("Digite a primeira nota:")
+      leia(nota1)
+      escreval("Digite a segunda nota:")
+      leia(nota2)
+      escreval("Digite a terceira nota:")
+      leia(nota3)
+
+      media <- (nota1+nota2+nota3) / (2+3+5)
+      
+      escreval("A media final deste aluno eh:", media)
+      
+Fimalgoritmo
+
+Algoritmo "exercicio8"
+// Fazer um algoritmo que leia o tempo de duracao de um evento em uma fabrica
+// expresso em segundos e mostre-o expresso em horas, minutos e segundos
+
+Var
+   tempoEve,exHoras, exMin, ExSeg: real
+   
+Inicio
+      escreval("Digite o tempo de duracao do evento em segundos:")
+      leia(tempoEve)
+      
+      exHoras <- tempoEve / 3600
+      
+      escreval("O tempo do evento em horas eh de:", exHoras, " horas")
+      
+      exMin <- tempoEve / 60
+      
+      escreval("O tempo do evento em minutos eh de:", exMin, " minutos")
+
+      escreval("O tempo do evento em segundo eh de:", tempoEve, " segundos")
+
+Fimalgoritmo
+
+
+
+Algoritmo "exercicio9"
+// Dado um numero, calcule a sua tabuada e imprima na tela
+
+Var
+
+   tabuada, primeiro, ultimo, x: inteiro
+
+
+Inicio
+
+      escreval("Digite a tabuada:")
+      leia(tabuada)
+        escreval("Digite o primeiro número:")
+      leia(primeiro)
+        escreval("Digite o último número:")
+      leia(ultimo)
+      
+      para x de primeiro ate ultimo faca
+           escreval(tabuada, " *", x, " =", tabuada*x)
+      fimpara
+
+Fimalgoritmo
+
+
+
+Algoritmo "exercicio10"
+//  Construa um algoritmo que, tendo como dados de entrada dois pontos
+
+Var
+   x1, x2,y1, y2, distancia: real
+
+Inicio
+
+    escreval("Digite x1:")
+    leia(x1)
+    escreval("Digite x2:")
+    leia(x2)
+    escreval("Digite y1:")
+    leia(y1)
+    escreval("Digite y2:")
+    leia(y2)
+ 
+    distancia <- raizq((x2+x1)^2)+((y2-y1)^2)
+ 
+    escreval("A distancia dos dois pontos eh", distancia: 5:2)
+
+Fimalgoritmo
+
+
+Algoritmo "exercicio11"
+//Crie um algoritmo para ler uma temperatura em graus Celsius e apresenta-la convertida
+//em graus Fahrenheit
+
+Var
+   c, f: real
+
+Inicio
+      escreval("Escreva a temperatura em Celsius:")
+      leia(c)
+      
+      f <- ((9*c) + 160) / 5
+      
+      escreval("A temperatura em Fahrenheit eh:", f, " F")
+
+Fimalgoritmo
+
+
+
+Algoritmo "exercicio12"
+// Escreva um algoritmo para calcular e apresentar o valor do volume de uma lata de óleo
+
+Var
+ v, r, h: real
+Inicio
+      escreval("Digite o raio da lata de oleo em cm:")
+      leia(r)
+      escreval("Digite a altura da lata de oleo em cm:")
+      leia(h)
+      
+      v <- 3,14159 * (r*r) * h
+      
+      escreval("O volume da lata eh:", v, " cm3" )
+
+Fimalgoritmo
+
+
+Algoritmo "exercicio13"
+
+Var
+   pres, valor, taxa, t: Real
+
+Inicio
+      escreval("Digite o valor da compra:")
+      leia(valor)
+      escreval("Digite o valor da taxa:")
+      leia(taxa)
+      escreval("Digite o valor do tempo das parcelas")
+      leia(t)
+
+      pres <- valor + (valor * (taxa / 100) * t)
+
+      escreval("O valor da prestacao eh:", pres)
+
+Fimalgoritmo
+
+
+Algoritmo "exercicio14"
+// Elaborar um programa que efetue a leitura de tres valores
+Var
+ A, B, C, resultado: real
+
+
+Inicio
+ escreVal("Digite o valor de A:")
+ leia(A)
+ escreVal("Digite o valor de B:")
+ leia(B)
+ escreVal("Digite o valor de C:")
+ leia(C)
+ 
+ resultado <- (A*A)+(B*B)+(C*C)
+
+ escreval("Soma dos quadrados dos tres valores eh:", resultado)
+
+Fimalgoritmo
+
+Algoritmo "exercicio14"
+// Elaborar um programa que efetue a leitura de tres valores
+
+Var
+ A, B, C, resultado: inteiro
+
+Inicio
+    escreVal("Digite o valor de A:")
+    leia(A)
+    escreVal("Digite o valor de B:")
+    leia(B)
+    escreVal("Digite o valor de C:")
+    leia(C)
+
+    resultado <- (A*A)+(B*B)+(C*C)
+
+    escreval("Soma dos quadrados dos tres valores eh:", resultado)
+
+Fimalgoritmo
+
+
+Algoritmo "exercicio16"
+//Escreva um algoritmo que leia tres números inteiros e positivos
+
+Var
+
+ a, b, c, r: real
+
+Inicio
+      escreval("Digite o primeiro numeros sendo inteiro e positivo")
+      leia(a)
+      escreval("Digite o segundo numeros sendo inteiro e positivo")
+      leia(b)
+      escreval("Digite o terceiro numeros sendo inteiro e positivo")
+      leia(c)
+      
+      r<-(((a+b)*(a+b)) + ((b+c)*(b+c)))/2
+
+      escreval("O resultado da expressao eh:", r)
+      
+Fimalgoritmo
+
+
+Algoritmo "exercicio17"
+// Faca um algoritmo que leia a idade de uma pessoa expressa em anos
+
+Var
+   d, m, a, r: inteiro
+   
+Inicio
+    escreval("Digite sua idade em anos:")
+    leia(a)
+    
+    m<- (a*12)
+    d<- (m*365)
+    r<-(m+d)
+    
+    escreval("Sua idade em meses eh:",m)
+    escreval("Sua idade em dias eh:", r)
+    
+Fimalgoritmo
+
+
+Algoritmo "exercicio18"
+Var
+   t1, t2, pTermo, i: inteiro
+
+Inicio
+   escreval("Digite o primeiro termo:")
+   leia(t1)
+   escreval("Digite o segundo termo:")
+   leia(t2)
+
+   Para i de 3 ate 7 faca
+      pTermo <- t1 + t2
+      Escreva(pTermo)
+      t1 <- t2
+      t2 <- pTermo
+   FimPara
+FimAlgoritmo
+
+
+Algoritmo "exercicio19"
+
+//Dadas duas variaveis A e B, crie um algoritmo leia, que inverta os valores nas variaveis
+
+Var
+
+   A,B:inteiro
+
+Inicio
+
+   escreval("Digite o valor de A:")
+   leia(A)
+   escreval("Digite o valor de B:")
+   leia(B)
+   
+   escreval("O valor de A eh:", B)
+   escreval("O valor de B eh:", A)
+
+Fimalgoritmo
+
+
+Algoritmo "exercicio20"
+
+Var
+
+   custoFa, custoCon: real
+
+Inicio
+
+   escreval("Digite o valor de custo de fabrica do carro:")
+   leia(custoFa)
+   
+   custoCon<- (custoFa + (custoFa*0.28)+(custoFa*0.45))
+   
+   escreval("O valor do custo do consumidor eh: R$", custoCon)
+
+Fimalgoritmo
+
+
+
+Algoritmo "exercicio21"
+
+Var
+
+   nome, matricula: caractere
+   nota1, nota2, media: real
+
+Inicio
+
+      escreval("Digite o nome do aluno")
+      leia(nome)
+      escreval("Digite o numero da matricula do aluno")
+      leia(matricula)
+      escreval("Digite a primeira nota bimestral do aluno")
+      leia(nota1)
+      escreval("Digite a segunda nota bimestral do aluno")
+      leia(nota2)
+      
+      media <- (nota1+nota2)/2
+      
+      escreval("Nome do aluno: ", nome)
+      escreval("Número da matricula: ", matricula)
+      escreval("A soma das duas notas de ", nome, " eh igual a:", (nota1+nota2))
+      escreval("A media aritmetica das duas notas de ", nome, " eh igual a:", media)
+
+Fimalgoritmo
+
+
+
+Algoritmo "exercicio22"
+// Dada uma idade fazer uma algoritmo que a converta em meses e horas
+
+Var
+
+   idadeAno, idadeMes, idadeDia, IdadeHora: real
+
+Inicio
+       escreval("Digte sua idade sem considerar ano bisiesto")
+      escreval("Digite sua idade em anos")
+      leia(idadeAno)
+      
+      idadeMes <- idadeAno*12
+      idadeDia<- idadeMes*30
+      idadeHora<-idadeDia*24
+      
+      escreval("A sua idade em meses eh:", idadeMes, " meses")
+      escreval("A sua idade em horas eh:", idadeHora, " horas")
+
+Fimalgoritmo

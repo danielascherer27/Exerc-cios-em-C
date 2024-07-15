@@ -1,0 +1,353 @@
+Exercício 1:
+
+#include <stdio.h>
+int main(){
+    float largura,comprimento;
+    printf("Digite a largura da figura geometrica:\n");
+    scanf("%f",&largura);
+    printf("Digite o comprimento da figura geometrica:\n");
+    scanf("%f",&comprimento);
+    //Aqui eu usei o IF para verificar se o comprimento e a largura sâo iguais, se forem iguais será um quadrado, se forem diferentes será um quadrado.
+    if (largura==comprimento)
+    {
+        printf("e um quadrado");
+    }else
+    {
+        printf("e um retangulo");
+    }
+    
+return 0;    
+}
+
+Exercício 2:
+
+#include <stdio.h>
+int main(){
+    float nota1,nota2,nota3,media,notaE,notaT;
+    printf("Digite a nota das 3 provas nota: (apenas 1 caractere na nota. ex: 70 = 7)\n");
+    scanf("%f %f %f",&nota1,&nota2,&nota3);
+    media=(nota1+nota2+nota3)/3;
+    //Aqui eu coloquei que caso a media maior ou igual a 7 o aluno foi aprovado, caso a media seja menor que 7 e maior ou igual a 4 o aluno tem a opção de exame, caso seja menor que 4 ele esta reprovado.
+    switch ((int)media){
+        case 10:
+        case 9:
+        case 8:
+        case 7:
+            printf("Aluno aprovado");
+            break;
+        case 6:
+        case 5:
+        case 4:
+            //Aqui eu criei duas variaveis, a notaE eu fiz 7 menos a media pra saber quanto faltou.
+            //Na variavel notaT eu somei o valor da variavel notaE com 7 pra saber o valor que ele precisa tirar no exame.
+            notaE= (7-media);
+            notaT=notaE+7;
+            printf("Aluno em exame, nota necessaria no exame: %.2f\n", notaT);
+            break;
+    default:
+        printf("Aluno reprovado.");
+        break;
+    }
+
+return 0;
+}
+
+
+
+Exercício 3:
+
+#include <stdio.h>
+int main(){
+    int dia,mes,ano;
+    printf("Digite o dia de hoje:\n");
+    scanf("%i",&dia);
+    printf("Digite o mes:\n");
+    scanf("%i",&mes);
+    printf("Digite o ano: (entre 1900 a 2100.)\n");
+    scanf("%i",&ano);
+    if (ano>2100 || ano<1900) // Aqui eu verifiquei se a pessoa digitou um ano valido.
+    {
+        printf("Digite um ano valido.");
+        return 0;
+    }
+    switch (mes) //Escolhi a variavel mes e verifiquei em cada caso se o dia inserido é valido para cada mes, se nao for ele pede para digitar um dia valido, se for valido ele apresenta a quantidade de dias passados no ano, soma a quantidade de dias dos meses passados mais a quantidade de dias que o usuario inseriu.
+    {
+    case 1:
+        if (dia>31 || dia<1)
+        {
+            printf("Digite um dia valido.");
+            return 0;
+        }
+        printf("Se passaram %i dias dos 365 dias do ano",dia);
+        break;
+    case 2:
+        if (dia>28 || dia<1)
+        {
+            printf("Digite um dia valido.");
+            return 0;
+        }
+        printf("Se passaram %i dias dos 365 dias do ano",dia+31);
+        break;
+    case 3:
+        if (dia>31 || dia<1)
+        {
+            printf("Digite um dia valido.");
+            return 0;
+        }
+        printf("Se passaram %i dias dos 365 dias do ano",dia+59);
+        break;
+    case 4:
+        if (dia>30 || dia<1)
+        {
+            printf("Digite um dia valido.");
+            return 0;
+        }
+        printf("Se passaram %i dias dos 365 dias do ano",dia+90);
+        break;
+    case 5:
+        if (dia>31 || dia<1)
+        {
+            printf("Digite um dia valido.");
+            return 0;
+        }
+        printf("Se passaram %i dias dos 365 dias do ano",dia+120);
+        break;
+    case 6:
+        if (dia>30 || dia<1)
+        {
+            printf("Digite um dia valido.");
+            return 0;
+        }
+        printf("Se passaram %i dias dos 365 dias do ano",dia+151);
+        break;
+    case 7:
+        if (dia>31 || dia<1)
+        {
+            printf("Digite um dia valido.");
+            return 0;
+        }
+        printf("Se passaram %i dias dos 365 dias do ano",dia+181);
+        break;
+    case 8:
+        if (dia>31 || dia<1)
+        {
+            printf("Digite um dia valido.");
+            return 0;
+        }
+        printf("Se passaram %i dias dos 365 dias do ano",dia+212);
+        break;
+    case 9:
+        if (dia>30 || dia<1)
+        {
+            printf("Digite um dia valido.");
+            return 0;
+        }
+        printf("Se passaram %i dias dos 365 dias do ano",dia+243);  
+        break; 
+    case 10:
+        if (dia>31 || dia<1)
+        {
+            printf("Digite um dia valido.");
+            return 0;
+        }
+        printf("Se passaram %i dias dos 365 dias do ano",dia+273);
+        break;
+    case 11:
+        if (dia>30 || dia<31)
+        {
+            printf("Digite um dia valido.");
+            return 0;
+        }
+        printf("Se passaram %i dias dos 365 dias do ano",dia+304);
+        break;
+    case 12:
+        if (dia>31 || dia<1)
+        {
+            printf("Digite um dia valido.");
+            return 0;
+        }
+        printf("Se passaram %i dias dos 365 dias do ano",dia+334);
+        break;
+    
+    default: printf("Digite um mes valido.");
+        break;
+    }
+   return 0;
+}
+
+Exercício 4:
+
+#include <stdio.h>
+int main(){
+    int num;
+    printf("Digite um numero correspondente a um dia: (1 a 7)\n");
+    scanf("%i",&num);
+    switch (num) //escolhi a variavel num e usei o caso de 1 a 7. ex: se num=2 ele vai printar "segunda".
+    {
+    case 1:
+        printf("Domingo");
+        break;
+    case 2:
+        printf("Segunda");
+        break;  
+    case 3:
+        printf("Terca");
+        break;
+    case 4:
+        printf("Quarta");
+        break;
+    case 5:
+        printf("Quinta");
+        break;
+    case 6:
+        printf("Sexta");
+        break;
+    case 7: 
+        printf("Sabado");
+        break;       
+
+    default: printf("O numero nao corresponde a um dia, tente novamente!");//Se ele digitar um numero q nao for entre 1 e 7, aparece a mensagem de erro.
+        break;
+    }
+
+}
+
+Exercício 5:
+
+#include <stdio.h>
+int main(){
+    int c1,m1,c5,c10,c25,c50,n2,n5,n10,n20,n50,n100,n200,dinheiro,centavos,menu;
+    printf("O seu valor possue centavos? (Digite 1 para sim e 2 para nao.)\n");
+    scanf("%i",&menu);
+    switch (menu) //criei um switch case para separar o caso de ter centavos ou nao.
+    {
+    case 1: //nesse caso possue centavos.
+        printf("Digite o valor apenas em reais:\n");
+        scanf("%d",&dinheiro);
+        printf("Digite os centavos desse valor:\n");
+        scanf("%d",&centavos);
+
+        n200=dinheiro/200; //fiz um calculo matematico onde ele faz o dinheiro apresentado pelo usuario - a a soma da divisao inteira das outras notas ou centavos e depois divide pela qual está verificando.
+        n100=((dinheiro-(n200*200))/100);
+        n50=((dinheiro-((n200*200)+(n100*100)))/50); //vamos supor que eu digitei 300 no valor em reais. sabemos que a divisao inteira de 300/200 será 1, ent n200 tera o valor de 1. no n50 ele faz o n200*200 (ou seja 1*200, pois n200 ficou com o valor de 1.), mesma coisa para o n100, que nesse caso seria 1 tambem, ai ele soma 200+100=300. dinheiro-300=0, dinheiro(=0)/50=0. entao nesse caso nao teremos a nota de 50.
+        n20=((dinheiro-((n200*200)+(n100*100)+(n50*50)))/20);
+        n10=((dinheiro-((n200*200)+(n100*100)+(n50*50)+(n20*20)))/10);
+        n5=((dinheiro-((n200*200)+(n100*100)+(n50*50)+(n20*20)+(n10*10)))/5);
+        n2=((dinheiro-((n200*200)+(n100*100)+(n50*50)+(n20*20)+(n10*10)+(n5*5)))/2);
+        m1=((dinheiro-((n200*200)+(n100*100)+(n50*50)+(n20*20)+(n10*10)+(n5*5)+(n2*2)))/1);
+        
+        c50=(centavos/50);
+        c25=((centavos-(c50*50))/25);//os centavos seguem a mesma logica do calculo das notas.
+        c10=((centavos-((c50*50)+(c25*25)))/10);
+        c5=((centavos-((c50*50)+(c25*25)+(c10*10)))/5);
+        c1=((centavos-((c50*50)+(c25*25)+(c10*10)+(c5*5)))/1);
+
+        if (n200>0)
+        {
+            printf("%d nota(s) de R$ 200.\n",n200);//aqui se tiver uma ou mais notas de 200 a variavel n200 sera maior que 0, logo ele apresenta o printf informando a quantia de notas de 200. Se for 0 ele ignora.
+        }
+        if (n100>0)
+        {
+            printf("%d nota(s) de R$ 100.\n",n100);
+        }
+        if (n50>0)
+        {
+            printf("%d notas(s) de R$ 50.\n",n50);
+        }
+        if (n20>0)
+        {
+            printf("%d nota(s) de R$ 20.\n",n20);
+        }        
+        if (n10>0)
+        {
+            printf("%d nota(s) de R$ 10.\n",n10);
+        }      
+        if (n5>0)
+        {
+            printf("%d nota(s) de R$ 5.\n",n5);
+        }
+        if (n2>0)
+        {
+            printf("%d nota(s) de R$ 2.\n",n2);
+        }
+        if (m1>0)
+        {
+            printf("%d moeda(s) de R$ 1.\n",m1);
+        }
+        
+        if (c50>0)
+        {
+            printf("%d moeda(s) de 50 centavos.\n",c50);
+        }
+        if (c25>0)
+        {
+            printf("%d moeda(s) de 25 centavos.\n",c25);
+        }
+        if (c10>0)
+        {
+            printf("%d moeda(s) de 10 centavos.\n",c10);
+        }
+        if (c5>0)
+        {
+            printf("%d moeda(s) de 5 centavos.\n",c5);
+        }
+        if (c1>0)
+        {
+            printf("%d moeda(s) de 1 centavo.\n",c1);
+        }
+        break;
+    case 2: //aqui é a mesma logica do caso 1, so muda que ele nao faz o calculo e  a apresentacao dos centavos.
+        printf("Digite o valor em reais:\n");
+        scanf("%d",&dinheiro);
+        
+        n200=dinheiro/200;
+        n100=((dinheiro-(n200*200))/100);
+        n50=((dinheiro-((n200*200)+(n100*100)))/50);
+        n20=((dinheiro-((n200*200)+(n100*100)+(n50*50)))/20);
+        n10=((dinheiro-((n200*200)+(n100*100)+(n50*50)+(n20*20)))/10);
+        n5=((dinheiro-((n200*200)+(n100*100)+(n50*50)+(n20*20)+(n10*10)))/5);
+        n2=((dinheiro-((n200*200)+(n100*100)+(n50*50)+(n20*20)+(n10*10)+(n5*5)))/2);
+        m1=((dinheiro-((n200*200)+(n100*100)+(n50*50)+(n20*20)+(n10*10)+(n5*5)+(n2*2)))/1);
+        
+        if (n200>0)
+        {
+            printf("%d nota(s) de R$ 200.\n",n200);
+        }
+        if (n100>0)
+        {
+            printf("%d nota(s) de R$ 100.\n",n100);
+        }
+        if (n50>0)
+        {
+            printf("%d notas(s) de R$ 50.\n",n50);
+        }
+        if (n20>0)
+        {
+            printf("%d nota(s) de R$ 20.\n",n20);
+        }        
+        if (n10>0)
+        {
+            printf("%d nota(s) de R$ 10.\n",n10);
+        }      
+        if (n5>0)
+        {
+            printf("%d nota(s) de R$ 5.\n",n5);
+        }
+        if (n2>0)
+        {
+            printf("%d nota(s) de R$ 2.\n",n2);
+        }
+        if (m1>0)
+        {
+            printf("%d moeda(s) de R$ 1.\n",m1);
+        }
+        break;
+    default: printf("Digite uma opcao disponivel!");
+        break;
+    }
+return 0;
+}
+
+
+
+

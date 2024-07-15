@@ -1,0 +1,674 @@
+Ex 01:
+
+#include <stdio.h>
+void multMatriz(int matriz[6][6], int valor) {
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 6; j++) {
+            matriz[i][j] *= valor;
+        }
+    }
+}
+void imprimirMatriz(int matriz[6][6]) {
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 6; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    int matriz[6][6];
+    int valor;
+    printf("Digite os elementos da matriz 6x6:\n");
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 6; j++) {
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+    printf("Digite um valor para multiplicar a matriz: ");
+    scanf("%d", &valor);
+    multMatriz(matriz, valor);
+    printf("Matriz resultante:\n");
+    imprimirMatriz(matriz);
+    return 0;
+}
+
+
+Ex 02:
+
+#include <stdio.h>
+void encontrVal(int matriz[4][3], int valor) {
+    printf("Posições do valor %d:\n", valor);
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (matriz[i][j] == valor) {
+                printf("Posicao [%d][%d]\n", i, j);
+            }
+        }
+    }
+}
+int main() {
+    int matriz[4][3];
+    int valor;
+    printf("Digite os elementos da matriz 4x3:\n");
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 3; j++) {
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+    printf("Digite um valor para encontrar na matriz: ");
+    scanf("%d", &valor);
+    encontrVal(matriz, valor);
+    return 0;
+}
+
+
+Ex 03:
+
+#include <stdio.h>
+void imprimirPar(int matriz[2][5]) {
+    printf("Elementos pares:\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 5; j++) {
+            if (matriz[i][j] % 2 == 0) {
+                printf("%d ", matriz[i][j]);
+            }
+        }
+    }
+    printf("\n");
+}
+int main() {
+    int matriz[2][5];
+    printf("Digite os elementos da matriz 2x5:\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 5; j++) {
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+    imprimirPar(matriz);
+    return 0;
+}
+
+
+Ex 04:
+
+#include <stdio.h>
+void imprimirPrin(int matriz[4][4]) {
+    printf("Elementos da diagonal principal:\n");
+    for (int i = 0; i < 4; i++) {
+        printf("%d ", matriz[i][i]);
+    }
+    printf("\n");
+}
+int main() {
+    int matriz[4][4];
+    printf("Digite os elementos da matriz 4x4:\n");
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+    imprimirPrin(matriz);
+    return 0;
+}
+
+
+Ex 05:
+
+#include <stdio.h>
+void somaMatriz(int matrizA[4][6], int matrizB[4][6], int matrizSoma[4][6], int matrizDiferenca[4][6]) {
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 6; j++) {
+            matrizSoma[i][j] = matrizA[i][j] + matrizB[i][j];
+            matrizDiferenca[i][j] = matrizA[i][j] - matrizB[i][j];
+        }
+    }
+}
+void imprimirMatriz(int matriz[4][6]) {
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 6; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    int matrizA[4][6], matrizB[4][6], matrizSoma[4][6], matrizDiferenca[4][6];
+    printf("Digite os elementos da matriz A 4x6:\n");
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 6; j++) {
+            scanf("%d", &matrizA[i][j]);
+        }
+    }
+    printf("Digite os elementos da matriz B 4x6:\n");
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 6; j++) {
+            scanf("%d", &matrizB[i][j]);
+        }
+    }
+    somaMatriz(matrizA, matrizB, matrizSoma, matrizDiferenca);
+    printf("Matriz A:\n");
+    imprimirMatriz(matrizA);
+    printf("Matriz B:\n");
+    imprimirMatriz(matrizB);
+    printf("Matriz Soma (A + B):\n");
+    imprimirMatriz(matrizSoma);
+    printf("Matriz Diferença (A - B):\n");
+    imprimirMatriz(matrizDiferenca);
+    return 0;
+}
+
+
+Ex 06:
+
+#include <stdio.h>
+int somarParPrin(int matriz[15][15]) {
+    int soma = 0;
+    for (int i = 0; i < 15; i++) {
+        if (matriz[i][i] % 2 == 0) {
+            soma += matriz[i][i];
+        }
+    }
+    return soma;
+}
+int main() {
+    int matriz[15][15];
+    printf("Digite os elementos da matriz 15x15:\n");
+    for (int i = 0; i < 15; i++) {
+        for (int j = 0; j < 15; j++) {
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+    int soma = somarParPrin(matriz);
+    printf("Somatorio dos elementos pares na diagonal principal: %d\n", soma);
+    return 0;
+}
+
+
+Ex 07:
+
+#include <stdio.h>
+int somarImparPrin(int matriz[5][5]) {
+    int soma = 0;
+    for (int i = 1; i < 5; i += 2) {
+        soma += matriz[i][i];
+    }
+    return soma;
+}
+int main() {
+    int matriz[5][5];
+    printf("Digite os elementos da matriz 5x5:\n");
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+    int soma = somarImparPrin(matriz);
+    printf("Somatorio dos elementos nas posicoees impares da diagonal principal: %d\n", soma);
+    return 0;
+}
+
+
+Ex 08:
+
+#include <stdio.h>
+void convertF(int matrizA[4][5], float matrizB[4][5]) {
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 5; j++) {
+            matrizB[i][j] = matrizA[i][j] * 9.0 / 5.0 + 32;
+        }
+    }
+}
+void imprimirMatrizInt(int matriz[4][5]) {
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 5; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+}
+void imprimirMatrizF(float matriz[4][5]) {
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 5; j++) {
+            printf("%.2f ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    int matrizA[4][5];
+    float matrizB[4][5];
+    printf("Digite os elementos da matriz A 4x5 (em graus Celsius):\n");
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 5; j++) {
+            scanf("%d", &matrizA[i][j]);
+        }
+    }
+    convertF(matrizA, matrizB);
+    printf("Matriz A (Celsius):\n");
+    imprimirMatrizInt(matrizA);
+    printf("Matriz B (Fahrenheit):\n");
+    imprimirMatrizF(matrizB);
+    return 0;
+}
+
+
+Ex 09:
+
+#include <stdio.h>
+void constMatrizB(int matrizA[5][5], int matrizB[5][5]) {
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            if (i == j) {
+                matrizB[i][j] = matrizA[i][j] * 3;
+            } else {
+                matrizB[i][j] = matrizA[i][j] * 2;
+            }
+        }
+    }
+}
+void imprimirMatriz(int matriz[5][5]) {
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    int matrizA[5][5], matrizB[5][5];
+    printf("Digite os elementos da matriz A 5x5:\n");
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            scanf("%d", &matrizA[i][j]);
+        }
+    }
+    constMatrizB(matrizA, matrizB);
+    printf("Matriz B (resultante):\n");
+    imprimirMatriz(matrizB);
+    return 0;
+}
+
+
+Ex 10:
+
+#include <stdio.h>
+void constMatrizB(int matrizA[6][5], int matrizB[6][5]) {
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 5; j++) {
+            if (matrizA[i][j] % 2 == 0) {
+                matrizB[i][j] = matrizA[i][j] + 5;
+            } else {
+                matrizB[i][j] = matrizA[i][j] - 4;
+            }
+        }
+    }
+}
+void imprimirMatriz(int matriz[6][5]) {
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 5; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    int matrizA[6][5], matrizB[6][5];
+    printf("Digite os elementos da matriz A 6x5:\n");
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 5; j++) {
+            scanf("%d", &matrizA[i][j]);
+        }
+    }
+    constMatrizB(matrizA, matrizB);
+    printf("Matriz A:\n");
+    imprimirMatriz(matrizA);
+    printf("Matriz B (resultante):\n");
+    imprimirMatriz(matrizB);
+    return 0;
+}
+
+Ex 11:
+
+#include <stdio.h>
+void calcularSoma(int matriz[5][5]) {
+    int soma4Linha = 0;
+    int soma2Coluna = 0;
+    int somaPrinc = 0;
+    int somaTotal = 0;
+    for (int j = 0; j < 5; j++) {
+        soma4Linha += matriz[3][j];
+    }
+    for (int i = 0; i < 5; i++) {
+        soma2Coluna += matriz[i][1];
+    }
+    for (int i = 0; i < 5; i++) {
+        somaPrinc += matriz[i][i];
+    }
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            somaTotal += matriz[i][j];
+        }
+    }
+    printf("%d\n", soma4Linha);
+    printf("%d\n", soma2Coluna);
+    printf("%d\n", somaPrinc);
+    printf("%d\n", somaTotal);
+}
+int main() {
+    int matriz[5][5];
+
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+    calcularSoma(matriz);
+    return 0;
+}
+
+
+Ex 12:
+#include <stdio.h>
+void criaTrans(int matrizOrig[4][5], int matrizTrans[5][4]) {
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 5; j++) {
+            matrizTrans[j][i] = matrizOrig[i][j];
+        }
+    }
+}
+void imprimirMatriz(int matriz[4][5]) {
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 5; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    int matrizOrig[4][5], matrizTrans[5][4];
+    printf("Digite os elementos da matriz 4x5:\n");
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 5; j++) {
+            scanf("%d", &matrizOrig[i][j]);
+        }
+    }
+    criaTrans(matrizOrig, matrizTrans);
+    printf("Matriz Transposta:\n");
+    imprimirMatriz(matrizTrans);
+    return 0;
+}
+
+
+Ex 13:
+
+#include <stdio.h>
+int fat(int num) {
+    if (num == 0 || num == 1) {
+        return 1;
+    } else {
+        int resultado = 1;
+        for (int i = 2; i <= num; i++) {
+            resultado *= i;
+        }
+        return resultado;
+    }
+}
+void constMatrizB(int matrizA[5][4], int matrizB[5][4]) {
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 4; j++) {
+            matrizB[i][j] = fat(matrizA[i][j]);
+        }
+    }
+}
+void imprimirMatriz(int matriz[5][4]) {
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 4; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    int matrizA[5][4], matrizB[5][4];
+    printf("Digite os elementos da matriz A 5x4:\n");
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 4; j++) {
+            scanf("%d", &matrizA[i][j]);
+        }
+    }
+    constMatrizB(matrizA, matrizB);
+    printf("Matriz A:\n");
+    imprimirMatriz(matrizA);
+    printf("\nMatriz B (fatoriais de elementos correspondentes):\n");
+    imprimirMatriz(matrizB);
+    return 0;
+}
+
+
+Ex 14:
+
+#include <stdio.h>
+void multPrin(int matriz[4][4], int valor, int vetorResul[]) {
+    for (int i = 0; i < 4; i++) {
+        vetorResul[i] = matriz[i][i] * valor;
+    }
+}
+void imprimirMatriz(int matriz[4][4]) {
+    printf("Matriz:\n");
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    int matriz[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
+    int valor = 2; 
+    int vetorResul[4];    
+    multPrin(matriz, valor, vetorResul);
+    printf("Matriz Original:\n");
+    imprimirMatriz(matriz);
+    printf("\nVetor Resultante:\n");
+    for (int i = 0; i < 4; i++) {
+        printf("%d ", vetorResul[i]);
+    }
+    return 0;
+}
+
+
+Ex 15:
+
+#include <stdio.h>
+
+void somarCol(int matriz[8][6], int vetorResul[]) {
+    for (int j = 0; j < 6; j++) {
+        int soma = 0;
+        for (int i = 0; i < 8; i++) {
+            soma += matriz[i][j];
+        }
+        vetorResul[j] = soma;
+    }
+}
+
+void imprimirVet(int vetor[], int tamanho) {
+    for (int i = 0; i < tamanho; i++) {
+        printf("%d ", vetor[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int matriz[8][6]; 
+    int vetResul[6]; 
+    
+    printf("Digite os elementos da matriz A 8x6:\n");
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 6; j++) {
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+    somarCol(matriz, vetResul);
+    imprimirVet(vetResul, 6);
+    
+    return 0;
+}
+
+
+Ex 16:
+
+#include <stdio.h>
+void somaLinha(int matriz[4][5], int vetResul[]) {
+    for (int i = 0; i < 4; i++) {
+        int soma = 0;
+        for (int j = 0; j < 5; j++) {
+            soma += matriz[i][j];
+        }
+        vetResul[i] = soma;
+    }
+}
+int main() {
+    int matriz[4][5];
+    int vetResul[4];
+    printf("Digite os elementos da matriz A 4x5:\n");
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 5; j++) {
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+    somaLinha(matriz, vetResul);
+    printf("Soma dos elementos de cada linha da matriz:\n");
+    for (int i = 0; i < 4; i++) {
+        printf("Linha %d: %d\n", i+1, vetResul[i]);
+    }    
+    return 0;
+}
+
+
+Ex 17:
+
+#include <stdio.h>
+int fat(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    } else {
+        int fat = 1;
+        for (int i = 2; i <= n; i++) {
+            fat *= i;
+        }
+        return fat;
+    }
+}
+void constMatrizE(int vetorA[], int vetorB[], int vetorC[], int vetorD[], int matrizE[4][4]) {
+    for (int i = 0; i < 4; i++) {
+        matrizE[0][i] = vetorA[i] * 2;
+    } 
+    for (int i = 0; i < 4; i++) {
+        matrizE[1][i] = vetorB[i] * 3;
+    }
+    for (int i = 0; i < 4; i++) {
+        matrizE[2][i] = vetorC[i] * 4;
+    }
+    for (int i = 0; i < 4; i++) {
+        matrizE[3][i] = fat(vetorD[i]);
+    }
+}
+int main() {
+    int vetorA[4], vetorB[4], vetorC[4], vetorD[4];
+    int matrizE[4][4];
+    for (int i = 0; i < 4; i++) {
+        scanf("%d", &vetorA[i]);
+    }
+    for (int i = 0; i < 4; i++) {
+        scanf("%d", &vetorB[i]);
+    }
+    for (int i = 0; i < 4; i++) {
+        scanf("%d", &vetorC[i]);
+    }
+    for (int i = 0; i < 4; i++) {
+        scanf("%d", &vetorD[i]);
+    }
+    constMatrizE(vetorA, vetorB, vetorC, vetorD, matrizE);  
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            printf("%d\t", matrizE[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+Ex 18:
+
+#include <stdio.h>
+void divMaior(int matriz[6][3]) {
+    int maior = matriz[0][0];
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (matriz[i][j] > maior) {
+                maior = matriz[i][j];
+            }
+        }
+    }
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 3; j++) {
+            matriz[i][j] /= maior;
+        }
+    }
+}
+void mostMatriz(int matriz[6][3]) {
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d\t", matriz[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    int matriz[6][3];
+    printf("Digite os elementos da matriz 6x3:\n");
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 3; j++) {
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+    divMaior(matriz);
+    printf("\nMatriz modificada:\n");
+    mostMatriz(matriz);
+    return 0;
+}
+
+
+Ex 19:
+
+#include <stdio.h>
+void constMatrizC(int matrizA[12], int matrizB[12], int matrizC[12][2]) {
+    for (int i = 0; i < 12; i++) {
+        matrizC[i][0] = matrizA[i] * 2;
+        matrizC[i][1] = matrizB[i] - 5;
+    }
+}
+void mostMatrizC(int matrizC[12][2]) {
+    printf("Matriz C:\n");
+    for (int i = 0; i < 12; i++) {
+        printf("%d\t%d\n", matrizC[i][0], matrizC[i][1]);
+    }
+}
+int main() {
+    int matrizA[12], matrizB[12];
+    int matrizC[12][2];
+    printf("Digite os elementos da matriz A (12 elementos):\n");
+    for (int i = 0; i < 12; i++) {
+        scanf("%d", &matrizA[i]);
+    }
+    printf("Digite os elementos da matriz B (12 elementos):\n");
+    for (int i = 0; i < 12; i++) {
+        scanf("%d", &matrizB[i]);
+    }
+    constMatrizC(matrizA, matrizB, matrizC);
+    mostMatrizC(matrizC);
+    return 0;
+}
+

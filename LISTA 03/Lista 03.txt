@@ -1,0 +1,413 @@
+#include<stdio.h>
+//Atividade 01
+int main(){
+    int idade;
+    printf("\nDigite a sua idade:");
+    scanf("%i",&idade);
+    if ( idade >= 18){
+       printf("Voce pode fazer carteira de habilitacao\n");
+    }else{
+        printf("Voce nao tem idade para fazer a carteira de habilitacao\n");
+    }
+    return 0;
+}
+
+#include<stdio.h>
+//Exercicio 03
+int main(){
+    int num;
+    printf("\nDigite qualquer numero:");
+    scanf("%i", &num);
+    if(num > 50){
+        printf("O numero eh maior que 50;\n");
+    }else{
+        printf("O numero eh menor que 50;\n");
+    }
+    return 0;
+}
+
+
+#include<stdio.h>
+//Exercicio 04
+int main(){
+    int num;
+    printf("\nDigite qualquer numero:");
+    scanf("%i", &num);
+    if (num >= 1 && num <= 50){
+        printf("O numero esta na faixa de 1 a 50;\n");
+    }else{
+        printf("O numero nao esta na faixa de 1 a 50;\n");
+    }
+    return 0;
+}
+
+
+#include<stdio.h>
+//Exercicio 04
+int main(){
+    int n;
+    printf("\nDigite qualquer numero:");
+    scanf("%i", &n);
+    if (n > 0){
+        printf("O numero eh positivo;\n");
+    }else{
+        if (n < 0){  
+            printf("O numero eh negativo;\n");
+        }else{
+            printf("O numero eh 0;\n");
+        }
+    }
+    return 0;
+}
+
+
+#include<stdio.h>
+//Exercicio 05
+int main(){
+    int num;
+    printf("\nDigite qualquer numero");
+    scanf("%i", &num);
+    if (num % 5 == 0) {
+        printf("%d eh multiplo de 5.\n", num);
+    } else {
+        printf("%d nao e multiplo de 5.\n", num);
+    }
+    return 0;
+}
+
+
+#include<stdio.h>
+//Exercicio 06
+int main(){
+    int num;
+    printf("\nDigite qualquer numero:");
+    scanf("%i", &num);
+    if (num >= 100 && num <= 1000){
+         printf("O numero esta dentro da faixa de 100 a 1000;\n");
+    }else{
+        printf("O numero esta fora da faixa de 100 a 1000;");
+    }
+    return 0;
+}
+
+
+
+#include<stdio.h>
+//Exercicio 07
+int main(){
+    int num;
+    printf("\nDgiite qualquer numero:");
+    scanf("%i", &num);
+    if( num % 2 == 0 ){
+        printf("O numero %i eh par;\n", num);
+    }else{
+        printf("O numero %i eh impar;\n", num);
+    }
+    return 0;
+}
+
+
+#include <stdio.h>
+//Exercicio 08
+int main() {
+    int num, resultado;
+    printf("Digite um numero natural: ");
+    scanf("%d", &num);
+    if (num % 2 == 0) {
+        resultado = num * 2;
+        printf("O dobro de %d eh %d.\n", num, resultado);
+    } else {
+        resultado = num * 3;
+        printf("O triplo de %d eh %d.\n", num, resultado);
+    }
+    return 0;
+}
+
+
+#include<stdio.h>
+//Exercicio 09
+int main(){
+    float nota1, nota2, media;
+    printf("\nDigite a nota 1:");
+    scanf("%f", &nota1);
+    printf("\nDigite a nota 2:");
+    scanf("%f", &nota2);
+    media = (nota1+nota2)/2;
+      if (media >= 7.0) {
+        printf(" O aluno foi aprovado! Media: %.2f\n", media);
+    } else if (media < 4.0) {
+        printf(" O aluno foi reprovado! Media: %.2f\n", media);
+    } else {
+        printf("O aluno foi para Exame! Media: %.2f\n", media);
+    }
+    return 0;   
+}
+
+
+#include<stdio.h>
+//Exercicio 10
+int main() {
+    float n1, n2, n3;
+    
+    printf("Digite o primeiro numero: ");
+    scanf("%f", &n1);
+    
+    printf("Digite o segundo numero: ");
+    scanf("%f", &n2);
+    
+    printf("Digite o terceiro numero: ");
+    scanf("%f", &n3);
+    
+    float maior, menor;
+    
+    if (n1 >= n2 && n1 >= n3)
+        maior = n1;
+    else if (n2 >= n1 && n2 >= n3)
+        maior = n2;
+    else
+        maior = n3;
+    
+    if (n1 <= n2 && n1 <= n3)
+        menor = n1;
+    else if (n2 <= n1 && n2 <= n3)
+        menor = n2;
+    else
+        menor = n3;
+    
+    printf("O maior numero e: %.2f\n", maior);
+    printf("O menor numero e: %.2f\n", menor);
+
+    return 0;
+}
+
+#include <stdio.h>
+//Exercicio 11
+int main() {
+    int num1, num2, num3;
+    
+    printf("Digite o primeiro numero: ");
+    scanf("%d", &num1);
+    
+    printf("Digite o segundo numero: ");
+    scanf("%d", &num2);
+    
+    printf("Digite o terceiro numero: ");
+    scanf("%d", &num3);
+    
+    if (num1 <= num2 && num1 <= num3) {
+        if (num2 <= num3)
+            printf("%d, %d, %d\n", num1, num2, num3);
+        else
+            printf("%d, %d, %d\n", num1, num3, num2);
+    } else if (num2 <= num1 && num2 <= num3) {
+        if (num1 <= num3)
+            printf("%d, %d, %d\n", num2, num1, num3);
+        else
+            printf("%d, %d, %d\n", num2, num3, num1);
+    } else {
+        if (num1 <= num2)
+            printf("%d, %d, %d\n", num3, num1, num2);
+        else
+            printf("%d, %d, %d\n", num3, num2, num1);
+    }
+    
+    return 0;
+}
+
+
+#include <stdio.h>
+//Exercicio 12
+int main() {
+    float a, b, c;
+
+    printf("Digite o primeiro lado: ");
+    scanf("%f", &a);
+    printf("Digite o segundo lado: ");
+    scanf("%f", &b);
+    printf("Digite o terceiro lado: ");
+    scanf("%f", &c);
+
+    if (a < b + c && b < a + c && c < a + b) {
+        if (a == b && b == c)
+            printf("Os lados formam um triangulo Equilatero.\n");
+        else if (a == b || a == c || b == c)
+            printf("Os lados formam um triangulo Isosceles.\n");
+        else
+            printf("Os lados formam um triangulo Escaleno.\n");
+    } else {
+        printf("Os lados nao podem formar um triangulo.\n");
+    }
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+    float a, b, c;
+
+    printf("Digite o primeiro lado: ");
+    scanf("%f", &a);
+    printf("Digite o segundo lado: ");
+    scanf("%f", &b);
+    printf("Digite o terceiro lado: ");
+    scanf("%f", &c);
+
+    if (a < b + c && b < a + c && c < a + b) {
+        if (a == b && b == c)
+            printf("Os lados formam um triangulo Equilatero.\n");
+        else if (a == b || a == c || b == c)
+            printf("Os lados formam um triangulo Isosceles.\n");
+        else
+            printf("Os lados formam um triangulo Escaleno.\n");
+    } else {
+        printf("Os lados nao podem formar um triangulo.\n");
+    }
+
+    return 0;
+}
+
+
+#include <stdio.h>
+//Exercicio 13
+int main() {
+    int n1, n2;
+    char operacao;
+    float resultado;
+
+    printf("Digite o primeiro numero: ");
+    scanf("%d", &n1);
+
+    printf("Digite o segundo numero: ");
+    scanf("%d", &n2);
+
+    printf("Digite a operacao desejada (+, -, *, /): ");
+    scanf(" %c", &operacao);
+
+    if (operacao == '+')
+        resultado = n1 + n2;
+    else if (operacao == '-')
+        resultado = n1 - n2;
+    else if (operacao == '*')
+        resultado = n1 * n2;
+    else if (operacao == '/')
+        resultado = (float) n1 / n2;
+    else {
+        printf("Operacao invalida.\n");
+        return 1;
+    }
+
+    printf("O resultado da operacao e: %.2f\n", resultado);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+//Exercicio 14
+int main() {
+    int codigo;
+    float preco_unitario, preco_total;
+    int quantidade;
+
+    printf("Digite o codigo do produto: ");
+    scanf("%d", &codigo);
+
+    printf("Digite a quantidade comprada: ");
+    scanf("%d", &quantidade);
+
+    if (codigo == 1) {
+        preco_unitario = 5.32;
+    } else if (codigo == 2) {
+        preco_unitario = 6.45;
+    } else if (codigo == 3) {
+        preco_unitario = 2.37;
+    } else if (codigo == 4) {
+        preco_unitario = 5.32;
+    } else if (codigo == 5) {
+        preco_unitario = 6.45;
+    } else {
+        printf("Codigo de produto invalido.\n");
+        return 1;
+    }
+
+    preco_total = preco_unitario * quantidade;
+
+    printf("O preco total a ser pago e: %.2f\n", preco_total);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+//Exercicio 15
+int main() {
+    int n1, n2;
+    int resultado;
+
+    printf("Digite o primeiro numero: ");
+    scanf("%d", &n1);
+
+    printf("Digite o segundo numero: ");
+    scanf("%d", &n2);
+
+    if (n1 > n2)
+        resultado = n1 - n2;
+    else if (n2 > n1)
+        resultado = n2 - n1;
+    else
+        resultado = 0;
+
+    printf("O resultado da subtracao do maior pelo menor e: %d\n", resultado);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+//Exercicio 16
+int main() {
+    int idade;
+
+    printf("Digite a idade do nadador: ");
+    scanf("%d", &idade);
+
+    if (idade >= 5 && idade <= 7)
+        printf("O nadador está na categoria infantil A.\n");
+    else if (idade >= 8 && idade <= 10)
+        printf("O nadador está na categoria infantil B.\n");
+    else if (idade >= 11 && idade <= 13)
+        printf("O nadador está na categoria juvenil A.\n");
+    else if (idade >= 14 && idade <= 17)
+        printf("O nadador está na categoria juvenil B.\n");
+    else if (idade >= 18)
+        printf("O nadador está na categoria adulto.\n");
+    else
+        printf("Idade invalida.\n");
+
+    return 0;
+}
+
+
+#include <stdio.h>
+//Exercicio 17
+int main() {
+    int a, b;
+
+    printf("Digite o primeiro valor: ");
+    scanf("%d", &a);
+
+    printf("Digite o segundo valor: ");
+    scanf("%d", &b);
+
+    if ((a % b == 0) || (b % a == 0))
+        printf("Sao multiplos.\n");
+    else
+        printf("Nao sao multiplos.\n");
+
+    return 0;
+}
+
+
+

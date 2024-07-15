@@ -1,0 +1,184 @@
+Ex 01:
+
+#include <stdio.h>
+#include <string.h>
+#define MAX 10
+typedef struct {
+    char nome[50];
+    char endereco[100];
+    char telefone[20];
+} Pessoa;
+void cadastrar(Pessoa agenda[], int n){
+    for (int i = 0; i < n; i++) {
+        printf("Cadastro %d\n", i + 1);
+        printf("Nome: ");
+        scanf(" %[^\n]", agenda[i].nome);
+        printf("Endereco: ");
+        scanf(" %[^\n]", agenda[i].endereco);
+        printf("Telefone: ");
+        scanf(" %[^\n]", agenda[i].telefone);
+    }
+}
+void pesquisar(Pessoa agenda[], int n) {
+    char nome[50];
+    printf("Digite o nome a ser pesquisado: ");
+    scanf(" %[^\n]", nome);
+
+    for (int i = 0; i < n; i++){
+        if (strcmp(agenda[i].nome, nome) == 0){
+            printf("Registro encontrado:\n");
+            printf("Nome: %s\n", agenda[i].nome);
+            printf("Endereço: %s\n", agenda[i].endereco);
+            printf("Telefone: %s\n", agenda[i].telefone);
+            return;
+        }
+    }
+    printf("Registro nao encontrado.\n");
+}
+void listar(Pessoa agenda[], int n){
+    for (int i = 0; i < n; i++) {
+        printf("Registro %d:\n", i + 1);
+        printf("Nome: %s\n", agenda[i].nome);
+        printf("Endereço: %s\n", agenda[i].endereco);
+        printf("Telefone: %s\n", agenda[i].telefone);
+    }
+}
+int main(){
+    Pessoa agenda[MAX];
+    int opcao;
+    do {
+        printf("Menu:\n");
+        printf("1. Cadastrar\n");
+        printf("2. Pesquisar\n");
+        printf("3. Listar todos\n");
+        printf("4. Sair\n");
+        printf("Escolha uma opcao: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                cadastrar(agenda, MAX);
+                break;
+            case 2:
+                pesquisar(agenda, MAX);
+                break;
+            case 3:
+                listar(agenda, MAX);
+                break;
+            case 4:
+                printf("Saindo...\n");
+                break;
+            default:
+                printf("Opcao invalida.\n");
+        }
+    } while (opcao != 4);
+    return 0;
+}
+
+
+Ex 02: 
+
+
+#include <stdio.h>
+#include <string.h>
+typedef struct {
+    char numero[20];
+    float valor;
+} Cheque;
+typedef struct{
+    char nome[50];
+    float saldo;
+} ContaBancaria;
+void chequeSFundo(Cheque cheques[], int num_cheques, ContaBancaria conta){
+    printf("Relatorio de Cheques Sem Fundo:\n");
+    for (int i = 0; i < num_cheques; i++) {
+        if (cheques[i].valor > conta.saldo) {
+            printf("Cheque numero: %s - Valor: %.2f\n", cheques[i].numero, cheques[i].valor);
+        }
+    }
+}
+int main(){
+    ContaBancaria conta;
+    printf("Digite o nome do titular da conta: ");
+    scanf(" %[^\n]", conta.nome);
+    printf("Digite o saldo da conta: ");
+    scanf("%f", &conta.saldo);
+    int num_cheques;
+    printf("Digite o numero de cheques: ");
+    scanf("%d", &num_cheques);
+    Cheque cheques[num_cheques];
+    for (int i = 0; i < num_cheques; i++) {
+        printf("Cheque %d\n", i + 1);
+        printf("Numero: ");
+        scanf(" %[^\n]", cheques[i].numero);
+        printf("Valor: ");
+        scanf("%f", &cheques[i].valor);
+    }
+    chequeSFundo(cheques, num_cheques, conta);
+    return 0;
+}
+
+
+Ex 03: 
+
+
+#include <stdio.h>
+#define SEMANAS 4
+#define PRODUTOS 5
+typedef struct {
+    char nome[50];
+    int vendas[SEMANAS];
+} Produto;
+void maiorSaid(Produto produtos[], int n){
+    int maior = 0;
+    for (int i = 1; i < n; i++) {
+        if (produtos[i].vendas[0] > produtos[maior].vendas[0]){
+            maior = i;
+        }
+    }
+    printf("Produto de maior saida: %s\n", produtos[maior].nome);
+}
+void diferePercent(Produto produtos[], int n){
+    int maior = produtos[0].vendas[0];
+    int menor = produtos[0].vendas[0];
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < SEMANAS; j++) {
+            if (produtos[i].vendas[j] > maior){
+                maior = produtos[i].vendas[j];
+            }
+            if (produtos[i].vendas[j] < menor){
+                menor = produtos[i].vendas[j];
+            }
+        }
+    }
+    float diferenca = ((maior - menor) / (float)menor) * 100;
+    printf("Diferenca percentual entre maior e menor saida: %.2f%%\n", diferenca);
+}
+void semanaMSaid(Produto produtos[], int n){
+    for (int i = 0; i < n; i++) {
+        int maiorSemana = 0;
+        for (int j = 1; j < SEMANAS; j++){
+            if (produtos[i].vendas[j] > produtos[i].vendas[maiorSemana]){
+                maiorSemana = j;
+            }
+        }
+        printf("Produto: %s - Semana de maior saida: %d\n", produtos[i].nome, maiorSemana + 1);
+    }
+}
+int main() {
+    Produto produtos[PRODUTOS];
+    for (int i = 0; i < PRODUTOS; i++){
+        printf("Produto %d\n", i + 1);
+        printf("Nome: ");
+        scanf(" %[^\n]", produtos[i].nome);
+        for (int j = 0; j < SEMANAS; j++) {
+            printf("Vendas na semana %d: ", j + 1);
+            scanf("%d", &produtos[i].vendas[j]);
+        }
+    }
+    maiorSaid(produtos, PRODUTOS);
+    diferePercent(produtos, PRODUTOS);
+    semanaMSaid(produtos, PRODUTOS);
+    return 0;
+}

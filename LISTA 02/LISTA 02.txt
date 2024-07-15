@@ -1,0 +1,337 @@
+#include <stdio.h>
+int main(){
+  float distancia, tempo, kmH, mS;
+  printf("\nDigite a distancia percorrida em Km:");
+  scanf("%f", &distancia);
+  printf("\nDigite o intervalo de tempo percorrido em horas:");
+  scanf("%f", &tempo);
+  kmH=distancia/tempo;
+  mS= (distancia*1000)/(tempo*3600);
+  printf("\nA velocidade media em Km por horas eh: %.2f Km/h\n", kmH);
+  printf("\nA velocidade media em metros por segundo eh: %.2f m/s\n", mS);
+
+  return 0;
+}
+
+
+#include <stdio.h>
+int main(){
+	int tempo, distancia, velocidade, litrosUsados;
+	printf("Informe o tempo gasto da viagem em horas: ");
+	scanf("%i", &tempo);
+	printf("Informe a velocidade media durante a viagem em Km por hora: ");
+	scanf("%i", &velocidade);
+	distancia = tempo*velocidade;
+	litrosUsados = distancia/12;
+	printf("\nA velocidade media da viagem foi de %i km/h.", velocidade);
+	printf("\nO tempo gasto na viagem foi de %i horas", tempo);
+	printf("\nA distancia percorrida na viagem foi de %i km", distancia);
+	printf("\nA quantidade litros gastos na viagem foi de %i L", litrosUsados);
+
+	return 0;
+}
+
+
+
+
+#include<stdio.h>
+int main(){
+  int n1, n2, ad, sub, div, mult;
+  printf("\nDigite o primeiro numero inteiro:\n");
+  scanf("%i", &n1);
+  printf("\nDigite o segundo numero inteiro:\n");
+  scanf("%i", &n2);
+  ad=n1+n2;
+  sub=n1-n2;
+  mult=n1*n2;
+  div=n1/n2;
+  printf("\nA soma dos dois numeros eh: %d\n", ad);
+  printf("\nA subtracao dos dois numeros eh: %d\n", sub);
+  printf("\nA multiplicacao dos dois numeros eh: %d\n", mult);
+  printf("\nA divisao dos dois numeros eh: %d\n", div);
+
+  return 0;
+}
+
+
+
+#include<stdio.h>
+int main(){
+    float valorTotal, desconto, parcela, comissaoParc, comissaoVist;
+    printf("\nDigite o valor total da compra:");
+    scanf("%f", &valorTotal);
+    desconto = valorTotal-(valorTotal * 0.10);
+    parcela = valorTotal / 3;
+    comissaoVist = desconto * 0.05;
+    comissaoParc = valorTotal * 0.05;
+    printf("\nO valor total a pagar com desconto de 10%%: R$%.2f\n", desconto);
+    printf("\nO valor de cada parcela (3x sem juros): R$%.2f\n", parcela);
+    printf("\nA comissao do vendedor (venda a vista): R$%.2f\n", comissaoVist);
+    printf("\nA comissao do vendedor (venda parcelada): R$%.2f\n", comissaoParc);
+
+    return 0;
+}
+
+
+
+
+#include <stdio.h>
+int main() {
+    char nome[50];
+    float salarioBruto, salarioLiquido;
+    int numDependentes;
+    float descontoINSS;
+    printf("Digite o nome do funcionario: ");
+    scanf("%s", nome);
+    printf("Digite o salario bruto do funcionario: ");
+    scanf("%f", &salarioBruto);
+    printf("Digite o numero de dependentes do funcionario: ");
+    scanf("%d", &numDependentes);
+    descontoINSS = (salarioBruto <= 300) ? salarioBruto * 0.08 : (salarioBruto <= 700) ? salarioBruto * 0.09 : salarioBruto * 0.10;
+    salarioLiquido = salarioBruto - descontoINSS + (15.0 * numDependentes) + 40.0 + 100.0;
+    printf("\nNome do funcionario: %s\n", nome);
+    printf("Salario liquido do funcionario: R$%.2f\n", salarioLiquido);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+int main() {
+    int quantPae, quantBroa;
+    float precoPao = 0.12, precoBroa = 1.50, totalVenda, poupanca;
+    printf("Digite a quantidade de paes vendidos: ");
+    scanf("%d", &quantPae);
+    printf("Digite a quantidade de broas vendidas: ");
+    scanf("%d", &quantBroa);
+    totalVenda = (quantPae * precoPao) + (quantBroa * precoBroa);
+    poupanca = totalVenda * 0.10;
+    printf("\nO total arrecadado com a venda de paes e broas: R$%.2f\n", totalVenda);
+    printf("\nO valor a ser guardado na conta de poupança: R$%.2f\n", poupanca);
+
+    return 0;
+}
+
+
+
+#include <stdio.h>
+int main(){
+    char nome[50];
+    int idAnos, idDias;
+    printf("\nDigite seu nome:");
+    scanf("%s", &nome);
+    printf("\nDigite sua idade em anos:");
+    scanf("%i", &idAnos);
+    idDias=idAnos*365;
+    printf("%s, sua idade em dias eh: %i\n", nome, idDias);
+    
+    return 0;
+}
+
+
+
+#include <stdio.h>
+int main(){
+    char nome[50];
+    int idAnos, idDias;
+    printf("\nDigite seu nome:");
+    scanf("%s", &nome); 
+    printf("\nDigite sua idade em anos:");
+    scanf("%i", &idAnos);
+    idDias=idAnos*365;
+    printf("%s, VOCE JA VIVEU: %i DIAS\n", nome, idDias);
+
+    return 0;
+}   
+
+
+
+#include <stdio.h>
+int main(){
+    float valGosolina, valPgto, litro;
+    printf("\nDigite o valor da gasolina por litro presente na bomba de abastecimento: ");
+    scanf("%f", &valGosolina);
+    printf("\nDigite o valor da total pago pelo abastecimento: ");
+    scanf("%f", &valPgto);
+    litro= valPgto/valGosolina;
+    printf("\nA quantidade de litro que você conseguiu abastecer eh: %.2f\n", litro);
+
+    return 0;
+}
+
+
+
+#include <stdio.h>
+int main(){
+    float peso, valPag;
+    printf("\nDigite o peso do prato em KG:");
+    scanf("%f", &peso);
+    valPag= peso*12.0;
+    printf("\nO valor a pagar eh: R$%.2f\n", valPag);
+
+    return 0;
+}
+
+
+
+#include <stdio.h>
+int main() {
+    int dia, mes, diasPassados;
+    printf("Digite o dia e o mês da data (dd mm): ");
+    scanf("%d %d", &dia, &mes);
+    diasPassados = (mes - 1) * 30 + dia;
+    printf("Dias passados desde o início do ano: %d\n", diasPassados);
+
+    return 0;
+}
+
+
+
+#include <stdio.h>
+
+int main() {
+    int quantCP, quantCM, quantCG;
+    float valorArrecadado;
+    printf("Digite a quantidade de camisetas pequenas:");
+    scanf("%d", &quantCP);
+    printf("Digite a quantidade de camisetas media:");
+    scanf("%d", &quantCM);
+    printf("Digite a quantidade de camisetas grandes:");
+    scanf("%d", &quantCG);
+    valorArrecadado = quantCP * 10 + quantCM * 12 + quantCG * 15;
+    printf("Valor arrecadado: R$%.2f\n", valorArrecadado);
+    return 0;
+}
+
+
+
+#include <stdio.h>
+int main(){
+    int dez, cen, uni, num;
+    printf("\nDigite um numero inteiro de 3 digitos:");
+    scanf("%i", &num);
+    cen = num;
+    dez = (num % 100);
+    uni = num % 10;
+    printf("\nCentena: %d", cen);
+    printf("\nDezena: %d", dez);
+    printf("\nUnidade: %d", uni);
+
+    return 0;
+}
+
+
+
+#include <stdio.h>
+int main() {
+    int quantSandu;
+    float queijo, presunto, carne;
+    printf("Digite a quantidade de sanduíches a fazer: ");
+    scanf("%d", &quantSandu);
+    queijo = quantSandu * 2 * 0.05; 
+    presunto = quantSandu * 1 * 0.05; 
+    carne = quantSandu * 1 * 0.10; 
+    printf("Quantidade de queijo necessária: %.2f kg\n", queijo);
+    printf("Quantidade de presunto necessária: %.2f kg\n", presunto);
+    printf("Quantidade de carne necessária: %.2f kg\n", carne);
+
+    return 0;
+}
+
+
+
+#include <stdio.h>
+int main() {
+    float salNormal = 10.00, salExtra = 15.00,  hTrabalhadas, horsExtras, salBruto, salLiquido;
+    printf("Digite a quantidade de horas normais trabalhadas: ");
+    scanf("%f", &hTrabalhadas);
+    printf("Digite a quantidade de horas extras trabalhadas: ");
+    scanf("%f", &horsExtras);
+    salBruto = hTrabalhadas * salNormal + horsExtras * salExtra;
+    salLiquido = salBruto * 0.90; 
+    printf("Salário bruto: R$%.2f\n", salBruto);
+    printf("Salário líquido: R$%.2f\n", salLiquido);
+
+    return 0;
+}
+
+
+
+#include <stdio.h>
+int main() {
+    int quantFrangos;
+    float custoChip = 4.00, custoAlimento = 3.50;
+    float custoTotal;
+    printf("Digite a quantidade de frangos da granja: ");
+    scanf("%d", &quantFrangos);
+    custoTotal = quantFrangos * (custoChip + 2 * custoAlimento);
+    printf("Custo total para marcar os frangos: R$%.2f\n", custoTotal);
+
+    return 0;
+}
+
+
+
+#include <stdio.h>
+int main() {
+    int latas, ga600, ga2L;
+    float totalLitros;
+    printf("Digite a quantidade de latas, garrafas de 600ml e garrafas de 2 litros compradas: ");
+    scanf("%d %d %d", &latas, &ga600, &ga2L);
+    totalLitros = latas * 0.35 + ga600 * 0.6 + ga2L * 2;
+    printf("Total de litros de refrigerante comprados: %.2f\n", totalLitros);
+
+    return 0;
+}
+
+
+
+
+#include <stdio.h>
+int main() {
+    float minhaAltura, minhaSombra, sombraPredio, alturaPredio;
+    printf("Digite sua altura e o comprimento da sua sombra (em metros): ");
+    scanf("%f %f", &minhaAltura, &minhaSombra);
+    printf("Digite o comprimento da sombra do prédio (em metros): ");
+    scanf("%f", &sombraPredio);
+    alturaPredio = (minhaAltura / minhaSombra) * sombraPredio;
+    printf("Altura do prédio: %.2f metros\n", alturaPredio);
+
+    return 0;
+}
+
+
+
+
+#include <stdio.h>
+int main() {
+    float dinheiroReais, dinheiroDolar, dinheiroMarco, dinheiroLibra;
+    const float cotacaoDolar = 1.80, cotacaoMarco = 2.00, cotacaoLibra = 1.57;
+    printf("Digite a quantidade de dinheiro em reais: ");
+    scanf("%f", &dinheiroReais);
+    dinheiroDolar = dinheiroReais / cotacaoDolar;
+    dinheiroMarco = dinheiroReais / cotacaoMarco;
+    dinheiroLibra = dinheiroReais / cotacaoLibra;
+    printf("Quantidade equivalente em dólares: %.2f\n", dinheiroDolar);
+    printf("Quantidade equivalente em marco alemão: %.2f\n", dinheiroMarco);
+    printf("Quantidade equivalente em libra esterlina: %.2f\n", dinheiroLibra);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
